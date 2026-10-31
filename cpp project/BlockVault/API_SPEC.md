@@ -416,3 +416,4 @@ CROW_ROUTE(app, "/api/v1/vault/credentials/<string>")
 ### 5. Advantages & Disadvantages:
 - **Advantages:** Universal browser compatibility, intuitive HTTP semantics, stateless horizontal scaling, simple debuggability via curl/Postman.
 - **Disadvantages:** JSON serialization overhead (mitigated by fast libraries like `nlohmann/json` or `simdjson`).
+
