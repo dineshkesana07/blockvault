@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>BlockVault - Secure Workspace</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"secondary":"#5de6ff","surface-container-low":"#161b2b","on-background":"#dee1f9","surface":"#0e1323","tertiary-fixed-dim":"#ffb780","on-primary-fixed":"#1c0062","error":"#ffb4ab","error-container":"#93000a","secondary-fixed":"#a2eeff","primary-container":"#947dff","on-primary-fixed-variant":"#4816cb","surface-container-highest":"#2f3446","on-tertiary":"#4e2600","on-secondary-fixed-variant":"#004e5a","on-error":"#690005","tertiary-fixed":"#ffdcc4","secondary-fixed-dim":"#2fd9f4","on-tertiary-fixed":"#2f1400","on-surface-variant":"#c9c4d8","on-primary-container":"#2a0088","inverse-on-surface":"#2b3041","outline":"#938ea1","surface-container":"#1a1f30","primary":"#cabeff","background":"#0e1323","surface-container-lowest":"#080d1d","primary-fixed-dim":"#cabeff","secondary-container":"#00cbe6","on-tertiary-container":"#442000","surface-variant":"#2f3446","surface-container-high":"#25293a","on-secondary-fixed":"#001f25","outline-variant":"#484555","on-error-container":"#ffdad6","surface-bright":"#34394a","on-secondary":"#00363e","inverse-surface":"#dee1f9","surface-dim":"#0e1323","primary-fixed":"#e6deff","inverse-primary":"#603ce2","tertiary-container":"#d7791f","tertiary":"#ffb780","on-primary":"#31009a","on-surface":"#dee1f9","surface-tint":"#cabeff","on-tertiary-fixed-variant":"#6f3800","on-secondary-container":"#00515d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter":"1.5rem","margin":"2rem","space-sm":"0.5rem","gutter-mobile":"0.75rem","margin-mobile":"1rem","space-lg":"1.5rem","space-md":"1rem","space-xl":"2.5rem","space-xs":"0.25rem"},"fontFamily":{"headline-sm":["Inter"],"body-md":["Inter"],"mono-data":["JetBrains Mono"],"display-hero":["Inter"],"display-hero-mobile":["Inter"],"mono-key":["JetBrains Mono"],"body-lg":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"],"headline-md":["Inter"],"badge-label":["JetBrains Mono"]},"fontSize":{"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"mono-data":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"400"}],"display-hero":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-hero-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"700"}],"mono-key":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"badge-label":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.5)] z-50 flex flex-col justify-between p-space-md"><div class="flex flex-col gap-space-md"><div class="flex items-center gap-space-sm px-space-xs py-space-xs"><img alt="BlockVault Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VCenrYkHi5yETyKHoMmBCjZkMzR0v6MHDNPi8aIQ4nYICf4rZB-V0mFkwUXiHVhrVRj4KGAjkDpxpLdMNw3Xl7bBeBlL6jT2gAtl-846gQfkwMD1XNtO1kve00egxpI37kPO8R0iirfZuszffgIDvcHsW_WGDENfJw5wfpT6H508NJMbxkvdz4MYt0n3DhGEqeoGJpHPeeNp5JJsp7imt3G8JdHrxXWTrzwS8hpzTB"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">BlockVault</span><span class="font-mono-key text-mono-key text-secondary">Zero-Knowledge OS</span></div></div><div class="bg-surface-container px-space-md py-space-sm rounded-lg flex items-center justify-between cursor-pointer hover:bg-surface-container-high transition-colors"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-lg" id="selectedCountBadge">shield</span><div class="flex flex-col"><span class="font-body-sm text-body-sm font-semibold text-on-surface">Personal Vault</span><span class="font-mono-key text-mono-key text-on-surface-variant">256-bit AES-GCM</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-sm">unfold_more</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="overview" href="#"><span class="material-symbols-outlined">dashboard</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="password-vault" href="#"><span class="material-symbols-outlined">key</span><span>Password Vault</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="password-generator" href="#"><span class="material-symbols-outlined">casino</span><span>Password Generator</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="security-health" href="#"><span class="material-symbols-outlined">security_update_good</span><span>Security Health</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="audit-ledger" href="#"><span class="material-symbols-outlined">receipt_long</span><span>Audit Ledger</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings-recovery" href="#"><span class="material-symbols-outlined">settings_suggest</span><span>Settings &amp; Recovery</span></a></nav></div><div class="flex flex-col gap-space-md"><div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-mono-key text-mono-key uppercase text-on-surface-variant">Encrypted Storage</span><span class="font-mono-key text-mono-key text-secondary font-semibold">42% Used</span></div><div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"><div class="w-[42%] h-full bg-secondary rounded-full"></div></div><span class="font-mono-key text-mono-key text-on-surface-variant">1.28 GB / 3.0 GB Allocated</span></div><button class="flex items-center justify-center gap-space-sm w-full py-space-sm px-space-md rounded-lg bg-surface-container hover:bg-error-container hover:text-on-error-container text-on-surface transition-all font-body-sm text-body-sm"><span class="material-symbols-outlined text-sm">lock</span><span>Lock Vault Now</span><span class="font-mono-key text-mono-key text-on-surface-variant ml-auto">[14:58]</span></button><div class="flex items-center justify-between px-space-xs"><span class="font-mono-key text-mono-key text-on-surface-variant">Status: Sealed</span><span class="font-badge-label text-badge-label text-secondary px-space-xs py-0.5 rounded-sm bg-surface-container">CYBER NOIR</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-base">search</span><input class="w-full pl-9 pr-space-md py-1.5 bg-surface-container rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="Search vault, items, tags... (Cmd+K)" type="text"/></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs bg-primary text-on-primary font-body-sm text-body-sm font-semibold px-space-md py-1.5 rounded-lg hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all shadow-[0_0_12px_rgba(124,92,255,0.35)]"><span class="material-symbols-outlined text-base">add</span><span>New Item</span></button><div class="hidden lg:flex items-center gap-space-xs font-mono-key text-mono-key px-space-sm py-1 rounded bg-surface-container-low text-secondary cyber-badge-glow"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>Vault Encrypted</span></div><button class="relative p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary"></span></button><div class="flex items-center gap-space-sm pl-space-sm cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGOfymuL-Gsw8JS_oxfEU03ebQuTrixjuBcwbwF3PJMJihxslzYZC44T8KRWqCQksVQZWOmAa2f-arDOaX2XXKHM9Z9qGE8mEU7qALIBGeNCVUfEGIDtWRmqAxWlTHmA4MInjYEBm8uu-Sd6Br5JK47_ouFxilqQ-Llg_MWQ5oonHYDmG48loOq6j_V38SBe6I2j8PbrNcCuBy4lYp8tJnOjk_ItSwOFLFVs28oag"/><div class="hidden xl:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface">Dr. Elena Vance</span><span class="font-mono-key text-mono-key text-on-surface-variant">Vault Architect</span></div><span class="material-symbols-outlined text-on-surface-variant text-sm">expand_more</span></div></div></header><main class="w-full pt-16 bg-background px-gutter min-h-screen ambient-mesh"><div class="flex flex-col w-full pb-space-xl">
+<!-- Interactive State Controller Script -->
+<script>
+    (function () {
+      // Highlight active nav item in Shell sidebar
+      document.addEventListener("DOMContentLoaded", () => {
+        const navLinks = document.querySelectorAll("aside nav a");
+        navLinks.forEach((link) => {
+          if (link.getAttribute("data-path") === "password-generator") {
+            link.className =
+              "flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary-container font-semibold transition-all shadow-[0_0_12px_rgba(124,92,255,0.25)]";
+          } else {
+            link.className =
+              "flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all";
+          }
+        });
+      });
+    })();
+  </script>
+<!-- Ambient Light Accents (Layered within parent bounds) -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[110px] pointer-events-none"></div>
+<div class="absolute top-10 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-[130px] pointer-events-none"></div>
+<!-- 1. Workspace Header Section -->
+<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-space-lg pb-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs">
+<span class="font-mono-key text-mono-key text-secondary px-space-sm py-0.5 rounded-sm bg-surface-container-high shadow-sm">
+            SYS::CRYPT_RNG_V4
+          </span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+<span class="font-mono-key text-mono-key text-on-surface-variant">
+            SHA-256 SEEDED
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Entropy Generator &amp; Key Synthesizer
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Client-side pseudo-random credential generator for zero-knowledge
+          vaults. Mathematical randomness executed strictly inside isolated
+          browser threads.
+        </p>
+</div>
+<!-- Quick Action Bar -->
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg transition-colors font-body-sm text-body-sm shadow-sm" id="openHistoryBtn">
+<span class="material-symbols-outlined text-base text-secondary">history</span>
+<span>History Log</span>
+<span class="ml-1 px-1.5 py-0.5 rounded-sm bg-surface-container-highest text-secondary font-mono-key text-mono-key" id="historyCountBadge">3</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg transition-colors font-body-sm text-body-sm shadow-sm" id="batchGenerateBtn">
+<span class="material-symbols-outlined text-base text-primary">splitscreen</span>
+<span>Batch Generate (5x)</span>
+</button>
+</div>
+</div>
+<!-- 2. Central Hero Generator Terminal / Display -->
+<div class="relative z-10 w-full bg-surface-container-low p-space-lg rounded-xl shadow-xl flex flex-col gap-space-md mb-space-lg">
+<!-- Terminal Meta Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-mono-key text-mono-key uppercase text-on-surface tracking-wider">LIVE ENTROPY STREAM</span>
+</div>
+<span class="font-mono-key text-mono-key px-2.5 py-1 rounded bg-surface-container-high text-secondary font-semibold" id="entropyBitsBadge">
+            128.4 BITS ENTROPY
+          </span>
+<span class="font-mono-key text-mono-key px-2 py-1 rounded bg-primary-container/20 text-primary font-semibold">
+            TIER-4 PARANOID
+          </span>
+</div>
+<div class="flex items-center gap-space-xs font-mono-key text-mono-key text-on-surface-variant">
+<span>OUTPUT CIPHER:</span>
+<span class="text-on-surface font-semibold">CSPRNG-HEX94</span>
+</div>
+</div>
+<!-- High-Impact Password Terminal Stream -->
+<div class="relative w-full bg-surface-container-lowest p-space-lg rounded-lg shadow-inner flex flex-col justify-center min-h-[96px] group transition-all">
+<div class="font-mono-data text-xl md:text-2xl lg:text-3xl tracking-wider select-all break-all transition-all duration-150 leading-relaxed" id="passwordDisplay">
+<!-- Hydrated by JS with syntactic color highlights -->
+</div>
+<!-- Terminal Watermark/Decor -->
+<span class="absolute right-3 bottom-2 font-mono-key text-mono-key text-outline-variant pointer-events-none tracking-widest opacity-40 uppercase">
+          MEM-ISOLATED // ZERO-TRANSMIT
+        </span>
+</div>
+<!-- Primary Action Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<!-- Copy Button -->
+<button class="relative flex items-center gap-space-xs px-space-lg py-2.5 bg-primary text-on-primary font-body-sm text-body-sm font-semibold rounded-lg hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all shadow-[0_0_16px_rgba(124,92,255,0.4)] active:scale-[0.98]" id="copyPasswordBtn">
+<span class="material-symbols-outlined text-lg">content_copy</span>
+<span id="copyBtnText">Copy Secret</span>
+<span class="hidden absolute -top-9 left-1/2 -translate-x-1/2 bg-surface-bright text-secondary text-mono-key font-mono-key px-2 py-1 rounded shadow-lg whitespace-nowrap" id="copyTooltip">
+              COPIED TO SECURE BUFFER
+            </span>
+</button>
+<!-- Re-roll Button -->
+<button class="flex items-center gap-space-xs px-space-md py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm rounded-lg transition-all shadow-sm active:scale-[0.98]" id="regenerateBtn">
+<span class="material-symbols-outlined text-lg text-secondary transition-transform duration-300" id="refreshIcon">sync</span>
+<span>Synthesize New</span>
+</button>
+<!-- Save to Vault Entry -->
+<button class="flex items-center gap-space-xs px-space-md py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm rounded-lg transition-all shadow-sm" id="saveToVaultBtn">
+<span class="material-symbols-outlined text-lg text-tertiary">enhanced_encryption</span>
+<span>Save to Personal Vault</span>
+</button>
+</div>
+<!-- Synthesizer Rate Indicator -->
+<div class="flex items-center gap-space-sm font-mono-key text-mono-key text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-secondary">speed</span>
+<span>LATENCY: 0.12ms (LOCAL WORKER)</span>
+</div>
+</div>
+</div>
+<!-- 3 & 4. Grid Architecture: Config vs Analytics Bento -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- 3. Granular Configuration Controls (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-low p-space-lg rounded-xl shadow-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-xl">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+              Synthesizer Calibration
+            </h2>
+</div>
+<span class="font-mono-key text-mono-key uppercase text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+            PARAM MATRIX
+          </span>
+</div>
+<!-- Presets Bar -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Quick Architect Presets</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs">
+<button class="preset-btn px-space-sm py-2 rounded-lg bg-surface-container-high text-secondary font-mono-key text-mono-key font-semibold transition-all shadow-sm text-center hover:bg-surface-bright" data-preset="master">
+              Master Key (24ch)
+            </button>
+<button class="preset-btn px-space-sm py-2 rounded-lg bg-surface-container text-on-surface-variant font-mono-key text-mono-key font-semibold transition-all shadow-sm text-center hover:bg-surface-bright hover:text-on-surface" data-preset="pin">
+              Numeric PIN (8ch)
+            </button>
+<button class="preset-btn px-space-sm py-2 rounded-lg bg-surface-container text-on-surface-variant font-mono-key text-mono-key font-semibold transition-all shadow-sm text-center hover:bg-surface-bright hover:text-on-surface" data-preset="token">
+              API Token (48ch)
+            </button>
+<button class="preset-btn px-space-sm py-2 rounded-lg bg-surface-container text-on-surface-variant font-mono-key text-mono-key font-semibold transition-all shadow-sm text-center hover:bg-surface-bright hover:text-on-surface" data-preset="phrase">
+              Memorable (32ch)
+            </button>
+</div>
+</div>
+<!-- Length Slider Module -->
+<div class="flex flex-col gap-space-sm bg-surface-container p-space-md rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Key Length Span</span>
+<div class="flex items-center gap-space-xs px-space-md py-1 bg-surface-container-lowest rounded-full shadow-inner">
+<span class="font-mono-data text-mono-data text-secondary font-bold" id="lengthValueDisplay">24</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant">characters</span>
+</div>
+</div>
+<div class="relative flex items-center py-2">
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary focus:outline-none" id="lengthSlider" max="64" min="8" type="range" value="24"/>
+</div>
+<div class="flex justify-between font-mono-key text-mono-key text-on-surface-variant">
+<span>8 (MINIMUM SAFE)</span>
+<span>24 (DEFAULT RECOMMENDED)</span>
+<span>64 (MAX ARCHIVAL)</span>
+</div>
+</div>
+<!-- Character Class Switches Matrix -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-mono-key text-mono-key uppercase text-on-surface-variant">Character Subsets &amp; Masking Policies</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Uppercase -->
+<label class="flex items-center justify-between p-space-sm bg-surface-container hover:bg-surface-container-high rounded-lg cursor-pointer transition-colors">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Uppercase Alpha</span>
+<span class="font-mono-key text-mono-key text-primary">A B C ... Z</span>
+</div>
+<input checked="" class="w-5 h-5 rounded accent-primary cursor-pointer bg-surface-container-lowest" id="toggleUpper" type="checkbox"/>
+</label>
+<!-- Lowercase -->
+<label class="flex items-center justify-between p-space-sm bg-surface-container hover:bg-surface-container-high rounded-lg cursor-pointer transition-colors">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Lowercase Alpha</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant">a b c ... z</span>
+</div>
+<input checked="" class="w-5 h-5 rounded accent-primary cursor-pointer bg-surface-container-lowest" id="toggleLower" type="checkbox"/>
+</label>
+<!-- Numeric -->
+<label class="flex items-center justify-between p-space-sm bg-surface-container hover:bg-surface-container-high rounded-lg cursor-pointer transition-colors">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Numeric Digits</span>
+<span class="font-mono-key text-mono-key text-secondary">0 1 2 ... 9</span>
+</div>
+<input checked="" class="w-5 h-5 rounded accent-secondary cursor-pointer bg-surface-container-lowest" id="toggleNumbers" type="checkbox"/>
+</label>
+<!-- Symbols -->
+<label class="flex items-center justify-between p-space-sm bg-surface-container hover:bg-surface-container-high rounded-lg cursor-pointer transition-colors">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Special Symbols</span>
+<span class="font-mono-key text-mono-key text-tertiary">! @ # $ % ^ &amp; * ~</span>
+</div>
+<input checked="" class="w-5 h-5 rounded accent-primary cursor-pointer bg-surface-container-lowest" id="toggleSymbols" type="checkbox"/>
+</label>
+<!-- Avoid Ambiguous -->
+<label class="flex items-center justify-between p-space-sm bg-surface-container hover:bg-surface-container-high rounded-lg cursor-pointer transition-colors sm:col-span-2">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Exclude Ambiguous Glyphs</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant">Eliminate visual lookalikes (l, 1, I, O, 0, 8, B)</span>
+</div>
+<input class="w-5 h-5 rounded accent-primary cursor-pointer bg-surface-container-lowest" id="toggleAmbiguous" type="checkbox"/>
+</label>
+<!-- Avoid Similar Symbols -->
+<label class="flex items-center justify-between p-space-sm bg-surface-container hover:bg-surface-container-high rounded-lg cursor-pointer transition-colors sm:col-span-2">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Exclude Repeating / Consecutive Patterns</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant">Prevent side-by-side duplicate characters</span>
+</div>
+<input checked="" class="w-5 h-5 rounded accent-primary cursor-pointer bg-surface-container-lowest" id="toggleConsecutive" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<!-- 4. Live Strength & Entropy Analytics Panel (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-low p-space-lg rounded-xl shadow-xl flex flex-col justify-between gap-space-lg">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-xl">monitoring</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">
+                Entropy Diagnostics
+              </h2>
+</div>
+<span class="font-badge-label text-badge-label text-secondary px-2 py-0.5 bg-surface-container rounded uppercase">LIVE TELEMETRY</span>
+</div>
+<!-- Multi-Segment Strength Gauge -->
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-mono-key text-mono-key uppercase text-on-surface-variant">Calculated Defense Level</span>
+<span class="font-mono-key text-mono-key text-secondary font-bold tracking-wide uppercase" id="strengthLabel">VERY STRONG (100%)</span>
+</div>
+<!-- Segmented Bar -->
+<div class="grid grid-cols-5 gap-1.5 h-2.5 my-1" id="strengthMeterBars">
+<div class="h-full bg-secondary rounded-sm transition-colors"></div>
+<div class="h-full bg-secondary rounded-sm transition-colors"></div>
+<div class="h-full bg-secondary rounded-sm transition-colors"></div>
+<div class="h-full bg-secondary rounded-sm transition-colors"></div>
+<div class="h-full bg-secondary rounded-sm transition-colors"></div>
+</div>
+<div class="flex justify-between font-mono-key text-mono-key text-on-surface-variant">
+<span>Vulnerable</span>
+<span>Standard</span>
+<span>Air-Gapped Grade</span>
+</div>
+</div>
+<!-- Entropy Detailed Breakdown Cards -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-0.5">
+<span class="font-mono-key text-mono-key text-on-surface-variant">THEORETICAL POOL</span>
+<span class="font-mono-data text-mono-data text-on-surface font-semibold" id="poolSizeDisplay">94 Characters</span>
+<span class="font-mono-key text-mono-key text-secondary">R = 94 sets</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-0.5">
+<span class="font-mono-key text-mono-key text-on-surface-variant">BRUTE-FORCE RESIST</span>
+<span class="font-mono-data text-mono-data text-primary font-semibold truncate">&gt;100T Years</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant">@ 10^10 hashes/s</span>
+</div>
+</div>
+<!-- Shannon Distribution Sparkline Graph -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-mono-key text-mono-key uppercase text-on-surface-variant">Character Dispersion Heatmap</span>
+<span class="font-mono-key text-mono-key text-secondary">PERMUTATION BALANCE</span>
+</div>
+<!-- SVG Data Visualizer -->
+<div class="w-full h-16 flex items-end justify-between gap-1 pt-2">
+<svg class="w-full h-full text-secondary" fill="none" preserveaspectratio="none" viewbox="0 0 320 60">
+<path d="M0 45 Q 30 10, 60 35 T 120 20 T 180 40 T 240 15 T 300 30 T 320 10 L 320 60 L 0 60 Z" fill="currentColor" fill-opacity="0.12"></path>
+<path d="M0 45 Q 30 10, 60 35 T 120 20 T 180 40 T 240 15 T 300 30 T 320 10" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex items-center justify-between font-mono-key text-mono-key text-on-surface-variant">
+<span>ALPHA: 52%</span>
+<span>NUM: 24%</span>
+<span>SYM: 24%</span>
+</div>
+</div>
+</div>
+<!-- Compliance Banner -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex items-center justify-between shadow-inner">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-2xl">verified</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">NIST SP 800-63B</span>
+<span class="font-mono-key text-mono-key text-secondary">Fully Compliant (Exceeds Tier 3)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base cursor-help" title="Adheres to NIST Special Publication 800-63B Digital Identity Guidelines">info</span>
+</div>
+</div>
+</div>
+<!-- 5. Educational Guidance & Recent Key Buffer Panel -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Educational Cryptographic Overview (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container-low p-space-lg rounded-xl shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">psychology</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+              Understanding Password Entropy &amp; Key Formulation
+            </h3>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant">GUIDE // SPEC-09</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Information Entropy Formula Card -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-xs">
+<span class="font-mono-key text-mono-key text-secondary uppercase font-semibold">1. Shannon Entropy Formula</span>
+<div class="font-mono-data text-mono-data bg-surface-container-lowest p-2 rounded text-primary my-1 text-center font-bold">
+              E = L × log&amp;sub2(R)
+            </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Where <strong class="text-on-surface">L</strong> is secret length
+              and <strong class="text-on-surface">R</strong> is the pool of
+              possible glyphs. An incremental increase in secret length yields
+              exponential improvements compared to merely adding rare symbols.
+            </p>
+</div>
+<!-- Length vs Complexity Comparison -->
+<div class="bg-surface-container p-space-md rounded-lg flex flex-col gap-space-xs">
+<span class="font-mono-key text-mono-key text-tertiary uppercase font-semibold">2. Length Outclasses Complexity</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              An 8-character password featuring symbols and mixed caps offers
+              approx. <span class="text-error font-mono-data">~52 bits</span>. A
+              24-character password generated using standard alpha-numerics
+              soars past
+              <span class="text-secondary font-mono-data">&gt;128 bits</span>,
+              rendering offline hash attacks mathematically impossible.
+            </p>
+</div>
+</div>
+<!-- Zero-Knowledge Prototype Notice -->
+<div class="bg-surface-container-high/60 p-space-md rounded-lg flex items-start gap-space-sm shadow-inner">
+<span class="material-symbols-outlined text-primary mt-0.5 text-lg">lock_clock</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Ephemeral Local Execution Guarantee</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Credentials synthesized on this screen use your device's native
+              <code class="font-mono-key text-secondary bg-surface-container-lowest px-1 py-0.5 rounded">crypto.getRandomValues()</code>
+              interface. No network calls or cloud telemetries occur during
+              generation.
+            </p>
+</div>
+</div>
+</div>
+<!-- Recent History Buffer Drawer (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-low p-space-lg rounded-xl shadow-xl flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-lg">history_toggle_off</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+                Session Buffer
+              </h3>
+</div>
+<button class="font-mono-key text-mono-key text-on-surface-variant hover:text-error transition-colors uppercase" id="clearHistoryBtn">
+              PURGE LOG
+            </button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Last generated keys cached in volatile RAM for rapid retrieval.
+          </p>
+<!-- History Rows -->
+<div class="flex flex-col gap-space-xs mt-space-xs" id="historyListContainer">
+<!-- Rendered dynamically -->
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between font-mono-key text-mono-key text-on-surface-variant">
+<span>AUTOCLEAR ON EXIT</span>
+<span class="text-secondary font-bold">ARMED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal: Batch Generator Dialog (Hidden by Default) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-surface-container-lowest/80 backdrop-blur-md hidden" id="batchModal">
+<div class="bg-surface-container p-space-lg rounded-xl shadow-2xl max-w-lg w-full flex flex-col gap-space-md mx-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">splitscreen</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">
+            Batch Credential Synthesizer (5x)
+          </h4>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" id="closeBatchModal">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Bulk synthesized credentials adhering to your active parameter matrix.
+      </p>
+<div class="flex flex-col gap-space-xs max-h-64 overflow-y-auto" id="batchResultsContainer">
+<!-- Populated via JS -->
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface font-body-sm text-body-sm transition-colors" id="copyAllBatchBtn">
+          Copy All (List)
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold hover:bg-primary-fixed-dim transition-colors" id="doneBatchBtn">
+          Done
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-bright text-secondary shadow-2xl font-mono-key text-mono-key" id="toastNotification">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span id="toastMessage">COPIED TO SYSTEM CLIPBOARD</span>
+</div>
+<!-- Dynamic Generator Engine Script -->
+<script>
+    (function () {
+      // Configuration State
+      const state = {
+        length: 24,
+        upper: true,
+        lower: true,
+        numbers: true,
+        symbols: true,
+        avoidAmbiguous: false,
+        noConsecutive: true,
+        currentSecret: "",
+        history: [
+          "9F#mP$9vL!2wQz*R7@bN4&xT",
+          "vK4$dM9@xQ2!rZ7#bL1*mP8&",
+          "W8*tY3!kM6#pQ9$bX2&cL5@v",
+        ],
+      };
+
+      const CHAR_SETS = {
+        upper: "ABCDEFGHJKLMNPQRSTUVWXYZ",
+        upperAmbiguous: "IO",
+        lower: "abcdefghijkmnopqrstuvwxyz",
+        lowerAmbiguous: "l",
+        numbers: "23456789",
+        numbersAmbiguous: "018",
+        symbols: "!@#$%^&*~_+=-",
+      };
+
+      // Element References
+      const passwordDisplay = document.getElementById("passwordDisplay");
+      const lengthSlider = document.getElementById("lengthSlider");
+      const lengthValueDisplay = document.getElementById("lengthValueDisplay");
+      const toggleUpper = document.getElementById("toggleUpper");
+      const toggleLower = document.getElementById("toggleLower");
+      const toggleNumbers = document.getElementById("toggleNumbers");
+      const toggleSymbols = document.getElementById("toggleSymbols");
+      const toggleAmbiguous = document.getElementById("toggleAmbiguous");
+      const toggleConsecutive = document.getElementById("toggleConsecutive");
+      const regenerateBtn = document.getElementById("regenerateBtn");
+      const refreshIcon = document.getElementById("refreshIcon");
+      const copyPasswordBtn = document.getElementById("copyPasswordBtn");
+      const copyTooltip = document.getElementById("copyTooltip");
+      const saveToVaultBtn = document.getElementById("saveToVaultBtn");
+      const entropyBitsBadge = document.getElementById("entropyBitsBadge");
+      const poolSizeDisplay = document.getElementById("poolSizeDisplay");
+      const strengthLabel = document.getElementById("strengthLabel");
+      const strengthMeterBars = document.getElementById("strengthMeterBars");
+      const historyListContainer = document.getElementById("historyListContainer");
+      const clearHistoryBtn = document.getElementById("clearHistoryBtn");
+      const openHistoryBtn = document.getElementById("openHistoryBtn");
+      const batchGenerateBtn = document.getElementById("batchGenerateBtn");
+      const batchModal = document.getElementById("batchModal");
+      const closeBatchModal = document.getElementById("closeBatchModal");
+      const doneBatchBtn = document.getElementById("doneBatchBtn");
+      const copyAllBatchBtn = document.getElementById("copyAllBatchBtn");
+      const batchResultsContainer = document.getElementById("batchResultsContainer");
+      const toastNotification = document.getElementById("toastNotification");
+      const toastMessage = document.getElementById("toastMessage");
+      const presetBtns = document.querySelectorAll(".preset-btn");
+
+      // Character Set Assembler
+      function getActivePool() {
+        let pool = "";
+        let upper = CHAR_SETS.upper + (state.avoidAmbiguous ? "" : CHAR_SETS.upperAmbiguous);
+        let lower = CHAR_SETS.lower + (state.avoidAmbiguous ? "" : CHAR_SETS.lowerAmbiguous);
+        let numbers = CHAR_SETS.numbers + (state.avoidAmbiguous ? "" : CHAR_SETS.numbersAmbiguous);
+        let symbols = CHAR_SETS.symbols;
+
+        if (state.upper) pool += upper;
+        if (state.lower) pool += lower;
+        if (state.numbers) pool += numbers;
+        if (state.symbols) pool += symbols;
+
+        // Fallback safety if user disables everything
+        if (pool.length === 0) {
+          pool = CHAR_SETS.upper + CHAR_SETS.numbers;
+        }
+        return pool;
+      }
+
+      // Cryptographically Secure Character Picker
+      function generatePassword(length = state.length) {
+        const pool = getActivePool();
+        const poolLen = pool.length;
+        const randomValues = new Uint32Array(length * 2);
+        window.crypto.getRandomValues(randomValues);
+
+        let result = "";
+        let rIndex = 0;
+
+        while (result.length < length && rIndex < randomValues.length) {
+          const char = pool[randomValues[rIndex] % poolLen];
+          rIndex++;
+
+          if (state.noConsecutive && result.length > 0 && result[result.length - 1] === char) {
+            continue;
+          }
+          result += char;
+        }
+
+        // Fill remainder if needed
+        while (result.length < length) {
+          const char = pool[Math.floor(Math.random() * poolLen)];
+          result += char;
+        }
+
+        return result;
+      }
+
+      // Syntax Highlighter for Password Terminal Display
+      function renderStyledPassword(secret) {
+        let html = "";
+        for (let i = 0; i < secret.length; i++) {
+          const ch = secret[i];
+          if (/[A-Z]/.test(ch)) {
+            html += `<span class="text-on-surface font-bold hover:brightness-125 transition-all">${ch}</span>`;
+          } else if (/[a-z]/.test(ch)) {
+            html += `<span class="text-on-surface-variant hover:text-on-surface transition-colors">${ch}</span>`;
+          } else if (/[0-9]/.test(ch)) {
+            html += `<span class="text-secondary font-bold hover:brightness-125 transition-all">${ch}</span>`;
+          } else {
+            html += `<span class="text-primary font-bold hover:brightness-150 transition-all">${ch}</span>`;
+          }
+        }
+        passwordDisplay.innerHTML = html;
+      }
+
+      // Calculate Shannon Entropy
+      function updateAnalytics(secret) {
+        const poolSize = getActivePool().length;
+        const bits = Math.round(secret.length * (Math.log2(poolSize || 2)) * 10) / 10;
+
+        entropyBitsBadge.textContent = `${bits} BITS ENTROPY`;
+        poolSizeDisplay.textContent = `${poolSize} Unique Glyphs`;
+
+        // Update Strength Segments
+        const bars = strengthMeterBars.querySelectorAll("div");
+        bars.forEach((bar) => (bar.className = "h-full bg-surface-container-highest rounded-sm transition-colors"));
+
+        if (bits < 40) {
+          strengthLabel.textContent = "WEAK (TIER-1)";
+          strengthLabel.className = "font-mono-key text-mono-key text-error font-bold uppercase";
+          bars[0].className = "h-full bg-error rounded-sm transition-colors";
+        } else if (bits < 64) {
+          strengthLabel.textContent = "MODERATE (TIER-2)";
+          strengthLabel.className = "font-mono-key text-mono-key text-tertiary font-bold uppercase";
+          bars[0].className = "h-full bg-tertiary rounded-sm transition-colors";
+          bars[1].className = "h-full bg-tertiary rounded-sm transition-colors";
+        } else if (bits < 96) {
+          strengthLabel.textContent = "STRONG (TIER-3)";
+          strengthLabel.className = "font-mono-key text-mono-key text-primary font-bold uppercase";
+          bars[0].className = "h-full bg-primary rounded-sm transition-colors";
+          bars[1].className = "h-full bg-primary rounded-sm transition-colors";
+          bars[2].className = "h-full bg-primary rounded-sm transition-colors";
+        } else {
+          strengthLabel.textContent = "VERY STRONG (100%)";
+          strengthLabel.className = "font-mono-key text-mono-key text-secondary font-bold uppercase";
+          bars.forEach((bar) => (bar.className = "h-full bg-secondary rounded-sm transition-colors"));
+        }
+      }
+
+      // History List UI Renderer
+      function renderHistory() {
+        historyListContainer.innerHTML = "";
+        state.history.slice(0, 3).forEach((item, index) => {
+          const row = document.createElement("div");
+          row.className =
+            "bg-surface-container hover:bg-surface-container-high p-space-sm rounded-lg flex items-center justify-between gap-space-sm transition-colors";
+          const masked = item.slice(0, 4) + "••••••••" + item.slice(-4);
+
+          row.innerHTML = `
+            <div class="flex items-center gap-space-xs overflow-hidden">
+              <span class="font-mono-key text-mono-key text-outline">0${index + 1}</span>
+              <span class="font-mono-data text-mono-data text-on-surface font-semibold truncate select-all">${masked}</span>
+            </div>
+            <button class="copy-history-item p-1 hover:text-secondary text-on-surface-variant transition-colors" data-secret="${item}" title="Copy Entry">
+              <span class="material-symbols-outlined text-base">content_copy</span>
+            </button>
+          `;
+          historyListContainer.appendChild(row);
+        });
+
+        // Attach Copy Event for history
+        document.querySelectorAll(".copy-history-item").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const secret = btn.getAttribute("data-secret");
+            copyToClipboard(secret, "BUFFER ITEM COPIED");
+          });
+        });
+      }
+
+      // Toast Notification Triggers
+      function showToast(msg) {
+        toastMessage.textContent = msg;
+        toastNotification.classList.remove("translate-y-16", "opacity-0");
+        toastNotification.classList.add("translate-y-0", "opacity-100");
+        setTimeout(() => {
+          toastNotification.classList.remove("translate-y-0", "opacity-100");
+          toastNotification.classList.add("translate-y-16", "opacity-0");
+        }, 2200);
+      }
+
+      function copyToClipboard(text, customToast) {
+        if (!navigator.clipboard) {
+          showToast("CLIPBOARD INACCESSIBLE");
+          return;
+        }
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(customToast || "COPIED TO SYSTEM CLIPBOARD");
+          copyTooltip.classList.remove("hidden");
+          setTimeout(() => copyTooltip.classList.add("hidden"), 1600);
+        });
+      }
+
+      // Main Synthesize Cycle
+      function synthesize(addToHistory = true) {
+        refreshIcon.classList.add("rotate-180");
+        setTimeout(() => refreshIcon.classList.remove("rotate-180"), 300);
+
+        const newSecret = generatePassword(state.length);
+        state.currentSecret = newSecret;
+        renderStyledPassword(newSecret);
+        updateAnalytics(newSecret);
+
+        if (addToHistory) {
+          state.history.unshift(newSecret);
+          if (state.history.length > 10) state.history.pop();
+          renderHistory();
+        }
+      }
+
+      // Setup Listeners
+      lengthSlider.addEventListener("input", (e) => {
+        state.length = parseInt(e.target.value, 10);
+        lengthValueDisplay.textContent = state.length;
+        synthesize(false);
+      });
+
+      toggleUpper.addEventListener("change", (e) => {
+        state.upper = e.target.checked;
+        synthesize(true);
+      });
+      toggleLower.addEventListener("change", (e) => {
+        state.lower = e.target.checked;
+        synthesize(true);
+      });
+      toggleNumbers.addEventListener("change", (e) => {
+        state.numbers = e.target.checked;
+        synthesize(true);
+      });
+      toggleSymbols.addEventListener("change", (e) => {
+        state.symbols = e.target.checked;
+        synthesize(true);
+      });
+      toggleAmbiguous.addEventListener("change", (e) => {
+        state.avoidAmbiguous = e.target.checked;
+        synthesize(true);
+      });
+      toggleConsecutive.addEventListener("change", (e) => {
+        state.noConsecutive = e.target.checked;
+        synthesize(true);
+      });
+
+      regenerateBtn.addEventListener("click", () => synthesize(true));
+
+      copyPasswordBtn.addEventListener("click", () => {
+        copyToClipboard(state.currentSecret, "SECRET SECURED IN BUFFER");
+      });
+
+      saveToVaultBtn.addEventListener("click", () => {
+        showToast("KEY TRANSFERRED TO NEW VAULT ENTRY");
+      });
+
+      clearHistoryBtn.addEventListener("click", () => {
+        state.history = [];
+        renderHistory();
+        showToast("VOLATILE BUFFER PURGED");
+      });
+
+      // Preset Handlers
+      presetBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          presetBtns.forEach((b) => {
+            b.className =
+              "preset-btn px-space-sm py-2 rounded-lg bg-surface-container text-on-surface-variant font-mono-key text-mono-key font-semibold transition-all shadow-sm text-center hover:bg-surface-bright hover:text-on-surface";
+          });
+          btn.className =
+            "preset-btn px-space-sm py-2 rounded-lg bg-surface-container-high text-secondary font-mono-key text-mono-key font-semibold transition-all shadow-sm text-center hover:bg-surface-bright";
+
+          const preset = btn.getAttribute("data-preset");
+          if (preset === "master") {
+            state.length = 24;
+            toggleUpper.checked = true;
+            toggleLower.checked = true;
+            toggleNumbers.checked = true;
+            toggleSymbols.checked = true;
+            toggleAmbiguous.checked = false;
+          } else if (preset === "pin") {
+            state.length = 8;
+            toggleUpper.checked = false;
+            toggleLower.checked = false;
+            toggleNumbers.checked = true;
+            toggleSymbols.checked = false;
+            toggleAmbiguous.checked = false;
+          } else if (preset === "token") {
+            state.length = 48;
+            toggleUpper.checked = true;
+            toggleLower.checked = true;
+            toggleNumbers.checked = true;
+            toggleSymbols.checked = false;
+            toggleAmbiguous.checked = true;
+          } else if (preset === "phrase") {
+            state.length = 32;
+            toggleUpper.checked = true;
+            toggleLower.checked = true;
+            toggleNumbers.checked = true;
+            toggleSymbols.checked = true;
+            toggleAmbiguous.checked = true;
+          }
+
+          lengthSlider.value = state.length;
+          lengthValueDisplay.textContent = state.length;
+          state.upper = toggleUpper.checked;
+          state.lower = toggleLower.checked;
+          state.numbers = toggleNumbers.checked;
+          state.symbols = toggleSymbols.checked;
+          state.avoidAmbiguous = toggleAmbiguous.checked;
+          synthesize(true);
+        });
+      });
+
+      // Batch Generator Modal Functions
+      function openBatch() {
+        batchResultsContainer.innerHTML = "";
+        const batchKeys = [];
+        for (let i = 0; i < 5; i++) {
+          const pass = generatePassword(state.length);
+          batchKeys.push(pass);
+          const row = document.createElement("div");
+          row.className =
+            "flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg hover:bg-surface-container-high transition-colors";
+          row.innerHTML = `
+            <span class="font-mono-data text-mono-data text-secondary truncate mr-2">${pass}</span>
+            <button class="copy-batch-single text-on-surface-variant hover:text-on-surface" data-secret="${pass}">
+              <span class="material-symbols-outlined text-sm">content_copy</span>
+            </button>
+          `;
+          batchResultsContainer.appendChild(row);
+        }
+
+        document.querySelectorAll(".copy-batch-single").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            copyToClipboard(btn.getAttribute("data-secret"), "KEY EXTRACTED");
+          });
+        });
+
+        copyAllBatchBtn.onclick = () => {
+          copyToClipboard(batchKeys.join("\n"), "ALL 5 KEYS COPIED TO BUFFER");
+        };
+
+        batchModal.classList.remove("hidden");
+      }
+
+      batchGenerateBtn.addEventListener("click", openBatch);
+      closeBatchModal.addEventListener("click", () => batchModal.classList.add("hidden"));
+      doneBatchBtn.addEventListener("click", () => batchModal.classList.add("hidden"));
+      openHistoryBtn.addEventListener("click", () => {
+        showToast("DISPLAYING ACTIVE WORKER BUFFER");
+      });
+
+      // Initial Kickoff
+      synthesize(false);
+      renderHistory();
+    })();
+  </script>
+</div></main></div></body></html>

@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>BlockVault - Secure Workspace</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"secondary":"#5de6ff","surface-container-low":"#161b2b","on-background":"#dee1f9","surface":"#0e1323","tertiary-fixed-dim":"#ffb780","on-primary-fixed":"#1c0062","error":"#ffb4ab","error-container":"#93000a","secondary-fixed":"#a2eeff","primary-container":"#947dff","on-primary-fixed-variant":"#4816cb","surface-container-highest":"#2f3446","on-tertiary":"#4e2600","on-secondary-fixed-variant":"#004e5a","on-error":"#690005","tertiary-fixed":"#ffdcc4","secondary-fixed-dim":"#2fd9f4","on-tertiary-fixed":"#2f1400","on-surface-variant":"#c9c4d8","on-primary-container":"#2a0088","inverse-on-surface":"#2b3041","outline":"#938ea1","surface-container":"#1a1f30","primary":"#cabeff","background":"#0e1323","surface-container-lowest":"#080d1d","primary-fixed-dim":"#cabeff","secondary-container":"#00cbe6","on-tertiary-container":"#442000","surface-variant":"#2f3446","surface-container-high":"#25293a","on-secondary-fixed":"#001f25","outline-variant":"#484555","on-error-container":"#ffdad6","surface-bright":"#34394a","on-secondary":"#00363e","inverse-surface":"#dee1f9","surface-dim":"#0e1323","primary-fixed":"#e6deff","inverse-primary":"#603ce2","tertiary-container":"#d7791f","tertiary":"#ffb780","on-primary":"#31009a","on-surface":"#dee1f9","surface-tint":"#cabeff","on-tertiary-fixed-variant":"#6f3800","on-secondary-container":"#00515d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter":"1.5rem","margin":"2rem","space-sm":"0.5rem","gutter-mobile":"0.75rem","margin-mobile":"1rem","space-lg":"1.5rem","space-md":"1rem","space-xl":"2.5rem","space-xs":"0.25rem"},"fontFamily":{"headline-sm":["Inter"],"body-md":["Inter"],"mono-data":["JetBrains Mono"],"display-hero":["Inter"],"display-hero-mobile":["Inter"],"mono-key":["JetBrains Mono"],"body-lg":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"],"headline-md":["Inter"],"badge-label":["JetBrains Mono"]},"fontSize":{"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"mono-data":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"400"}],"display-hero":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-hero-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"700"}],"mono-key":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"badge-label":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.5)] z-50 flex flex-col justify-between p-space-md"><div class="flex flex-col gap-space-md"><div class="flex items-center gap-space-sm px-space-xs py-space-xs"><img alt="BlockVault Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VCenrYkHi5yETyKHoMmBCjZkMzR0v6MHDNPi8aIQ4nYICf4rZB-V0mFkwUXiHVhrVRj4KGAjkDpxpLdMNw3Xl7bBeBlL6jT2gAtl-846gQfkwMD1XNtO1kve00egxpI37kPO8R0iirfZuszffgIDvcHsW_WGDENfJw5wfpT6H508NJMbxkvdz4MYt0n3DhGEqeoGJpHPeeNp5JJsp7imt3G8JdHrxXWTrzwS8hpzTB"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">BlockVault</span><span class="font-mono-key text-mono-key text-secondary">Zero-Knowledge OS</span></div></div><div class="bg-surface-container px-space-md py-space-sm rounded-lg flex items-center justify-between cursor-pointer hover:bg-surface-container-high transition-colors"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-lg" id="selectedCountBadge">shield</span><div class="flex flex-col"><span class="font-body-sm text-body-sm font-semibold text-on-surface">Personal Vault</span><span class="font-mono-key text-mono-key text-on-surface-variant">256-bit AES-GCM</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-sm">unfold_more</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="overview" href="#"><span class="material-symbols-outlined">dashboard</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="password-vault" href="#"><span class="material-symbols-outlined">key</span><span>Password Vault</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="password-generator" href="#"><span class="material-symbols-outlined">casino</span><span>Password Generator</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="security-health" href="#"><span class="material-symbols-outlined">security_update_good</span><span>Security Health</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="audit-ledger" href="#"><span class="material-symbols-outlined">receipt_long</span><span>Audit Ledger</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings-recovery" href="#"><span class="material-symbols-outlined">settings_suggest</span><span>Settings &amp; Recovery</span></a></nav></div><div class="flex flex-col gap-space-md"><div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-mono-key text-mono-key uppercase text-on-surface-variant">Encrypted Storage</span><span class="font-mono-key text-mono-key text-secondary font-semibold">42% Used</span></div><div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden"><div class="w-[42%] h-full bg-secondary rounded-full"></div></div><span class="font-mono-key text-mono-key text-on-surface-variant">1.28 GB / 3.0 GB Allocated</span></div><button class="flex items-center justify-center gap-space-sm w-full py-space-sm px-space-md rounded-lg bg-surface-container hover:bg-error-container hover:text-on-error-container text-on-surface transition-all font-body-sm text-body-sm"><span class="material-symbols-outlined text-sm">lock</span><span>Lock Vault Now</span><span class="font-mono-key text-mono-key text-on-surface-variant ml-auto">[14:58]</span></button><div class="flex items-center justify-between px-space-xs"><span class="font-mono-key text-mono-key text-on-surface-variant">Status: Sealed</span><span class="font-badge-label text-badge-label text-secondary px-space-xs py-0.5 rounded-sm bg-surface-container">CYBER NOIR</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-base">search</span><input class="w-full pl-9 pr-space-md py-1.5 bg-surface-container rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="Search vault, items, tags... (Cmd+K)" type="text"/></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs bg-primary text-on-primary font-body-sm text-body-sm font-semibold px-space-md py-1.5 rounded-lg hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all shadow-[0_0_12px_rgba(124,92,255,0.35)]"><span class="material-symbols-outlined text-base">add</span><span>New Item</span></button><div class="hidden lg:flex items-center gap-space-xs font-mono-key text-mono-key px-space-sm py-1 rounded bg-surface-container-low text-secondary cyber-badge-glow"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span>Vault Encrypted</span></div><button class="relative p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-secondary"></span></button><div class="flex items-center gap-space-sm pl-space-sm cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGOfymuL-Gsw8JS_oxfEU03ebQuTrixjuBcwbwF3PJMJihxslzYZC44T8KRWqCQksVQZWOmAa2f-arDOaX2XXKHM9Z9qGE8mEU7qALIBGeNCVUfEGIDtWRmqAxWlTHmA4MInjYEBm8uu-Sd6Br5JK47_ouFxilqQ-Llg_MWQ5oonHYDmG48loOq6j_V38SBe6I2j8PbrNcCuBy4lYp8tJnOjk_ItSwOFLFVs28oag"/><div class="hidden xl:flex flex-col text-left"><span class="font-body-sm text-body-sm font-semibold text-on-surface">Dr. Elena Vance</span><span class="font-mono-key text-mono-key text-on-surface-variant">Vault Architect</span></div><span class="material-symbols-outlined text-on-surface-variant text-sm">expand_more</span></div></div></header><main class="w-full pt-16 bg-background px-gutter min-h-screen ambient-mesh"><div class="flex flex-col w-full pb-16">
+<!-- Top Ambient Neon Ray / Vignette Glow -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-24 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-0 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Page Title & Header Actions -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md pt-space-lg pb-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Password Vault</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-high text-secondary font-mono-key text-mono-key shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+            Personal Enclave (AES-256 GCM)
+          </span>
+<span class="font-mono-key text-mono-key text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+            EPOCH-8924 // ZERO-KNOWLEDGE
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Hardware-isolated client secrets encrypted locally with argon2id key derivation before synchronizing to distributed storage nodes.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="flex items-center gap-space-xs bg-primary text-on-primary font-body-md text-body-md font-semibold px-space-md py-2 rounded-lg hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all shadow-[0_0_16px_rgba(124,92,255,0.4)] cursor-pointer" id="openAddModalBtn">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>+ Add Credential</span>
+</button>
+<button class="flex items-center gap-space-xs bg-surface-container-high text-on-surface font-body-md text-body-md px-space-md py-2 rounded-lg hover:bg-surface-bright transition-all shadow-sm cursor-pointer" id="batchImportBtn">
+<span class="material-symbols-outlined text-lg text-on-surface-variant">file_upload</span>
+<span>Batch Import</span>
+</button>
+<button class="flex items-center gap-space-xs bg-surface-container text-on-surface-variant hover:text-on-surface font-body-md text-body-md px-space-md py-2 rounded-lg hover:bg-surface-container-high transition-all shadow-sm cursor-pointer" id="exportEncryptedBtn">
+<span class="material-symbols-outlined text-lg">enhanced_encryption</span>
+<span>Export Encrypted Backup</span>
+</button>
+</div>
+</div>
+<!-- Vault Telemetry & Security Health Summary Chips -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm mb-space-lg">
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex flex-col">
+<span class="font-mono-key text-mono-key uppercase text-on-surface-variant">Stored Credentials</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-0.5">142</span>
+<span class="font-mono-key text-mono-key text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">verified</span> 100% Client-Side Sealed
+          </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">key</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex flex-col">
+<span class="font-mono-key text-mono-key uppercase text-on-surface-variant">Breach Exposure</span>
+<span class="font-headline-md text-headline-md text-secondary mt-0.5">0 Breached</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">format_image_left</span> Monitored via HIBP API
+          </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-xl">download_for_offline</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex flex-col">
+<span class="font-mono-key text-mono-key uppercase text-on-surface-variant">Weak / Reused Keys</span>
+<span class="font-headline-md text-headline-md text-tertiary mt-0.5">3 Flagged</span>
+<span class="font-mono-key text-mono-key text-tertiary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">warning</span> Urgent Rotation Needed
+          </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-xl">sync_problem</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between shadow-sm">
+<div class="flex flex-col">
+<span class="font-mono-key text-mono-key uppercase text-on-surface-variant">Enclave Synchronization</span>
+<span class="font-headline-md text-headline-md text-on-surface mt-0.5">Synced 2m ago</span>
+<span class="font-mono-key text-mono-key text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">cloud_done</span> 4 Replicas Healthy
+          </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-xl">cloud_sync</span>
+</div>
+</div>
+</div>
+<!-- Search, Filter & View Controls -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-md flex flex-col gap-space-md mb-space-md">
+<!-- Search Input & Omnisearch Trigger -->
+<div class="flex flex-col md:flex-row items-center gap-space-sm justify-between">
+<div class="relative w-full md:max-w-2xl">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="w-full pl-10 pr-20 py-2.5 bg-surface-container rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="credentialSearchInput" placeholder="Search credentials by website, username, or tag..." type="text"/>
+<div class="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1 bg-surface-container-high px-2 py-0.5 rounded text-on-surface-variant font-mono-key text-mono-key">
+<span>⌘</span><span>K</span>
+</div>
+</div>
+<!-- Sort & View Controls -->
+<div class="flex items-center gap-space-sm w-full md:w-auto justify-end">
+<div class="relative flex-1 md:flex-none">
+<select class="w-full md:w-auto appearance-none bg-surface-container px-space-md pr-8 py-2 rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer shadow-inner" id="sortDropdown">
+<option value="name-asc">Sort by Website Name (A-Z)</option>
+<option value="date-newest">Sort by Creation Date (Newest)</option>
+<option value="date-oldest">Sort by Creation Date (Oldest)</option>
+<option value="date-modified">Sort by Last Modified</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-base">expand_more</span>
+</div>
+<div class="flex items-center bg-surface-container p-1 rounded-lg">
+<button class="p-1.5 rounded bg-surface-container-high text-secondary cursor-pointer transition-colors" id="viewTableBtn" title="Table View">
+<span class="material-symbols-outlined text-lg">format_list_bulleted</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors" id="viewGridBtn" title="Grid View">
+<span class="material-symbols-outlined text-lg">grid_view</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Category Filter Pills / Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="categoryFilterContainer">
+<button class="category-pill active flex items-center gap-2 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-body-sm text-body-sm font-semibold whitespace-nowrap cursor-pointer transition-all shadow-sm" data-cat="all">
+<span>All Credentials</span>
+<span class="font-mono-key text-mono-key px-1.5 py-0.2 bg-on-primary-container/20 rounded">142</span>
+</button>
+<button class="category-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm whitespace-nowrap cursor-pointer transition-all" data-cat="Work">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Work</span>
+<span class="font-mono-key text-mono-key px-1.5 py-0.2 bg-surface-container-highest rounded text-on-surface">46</span>
+</button>
+<button class="category-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm whitespace-nowrap cursor-pointer transition-all" data-cat="Finance">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Finance</span>
+<span class="font-mono-key text-mono-key px-1.5 py-0.2 bg-surface-container-highest rounded text-on-surface">18</span>
+</button>
+<button class="category-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm whitespace-nowrap cursor-pointer transition-all" data-cat="Social Media">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Social Media</span>
+<span class="font-mono-key text-mono-key px-1.5 py-0.2 bg-surface-container-highest rounded text-on-surface">24</span>
+</button>
+<button class="category-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm whitespace-nowrap cursor-pointer transition-all" data-cat="Entertainment">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span>Entertainment</span>
+<span class="font-mono-key text-mono-key px-1.5 py-0.2 bg-surface-container-highest rounded text-on-surface">28</span>
+</button>
+<button class="category-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm whitespace-nowrap cursor-pointer transition-all" data-cat="Education">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+<span>Education</span>
+<span class="font-mono-key text-mono-key px-1.5 py-0.2 bg-surface-container-highest rounded text-on-surface">12</span>
+</button>
+<button class="category-pill flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-sm text-body-sm whitespace-nowrap cursor-pointer transition-all" data-cat="Other">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>Other</span>
+<span class="font-mono-key text-mono-key px-1.5 py-0.2 bg-surface-container-highest rounded text-on-surface">14</span>
+</button>
+</div>
+</div>
+<!-- Active Vault Table View -->
+<div class="w-full bg-surface-container-low rounded-xl overflow-hidden shadow-lg mb-space-xl" id="vaultTableView">
+<!-- Table Header Bar -->
+<div class="grid grid-cols-12 gap-space-sm px-space-md py-3 bg-surface-container text-on-surface-variant font-mono-key text-mono-key uppercase">
+<div class="col-span-4 lg:col-span-3 flex items-center gap-2">
+<span>Website &amp; Identity</span>
+</div>
+<div class="col-span-2 hidden lg:flex items-center">
+<span>Category</span>
+</div>
+<div class="col-span-4 lg:col-span-3 flex items-center">
+<span>Secret / Passkey</span>
+</div>
+<div class="col-span-2 hidden xl:flex items-center">
+<span>Integrity / Strength</span>
+</div>
+<div class="col-span-4 lg:col-span-2 flex items-center justify-end">
+<span>Actions</span>
+</div>
+</div>
+<!-- Credential Rows List -->
+<div class="divide-y divide-transparent" id="credentialListContainer">
+<!-- Row 1: GitHub Enterprise (Work) -->
+<div class="credential-row grid grid-cols-12 gap-space-sm px-space-md py-3.5 items-center hover:bg-surface-container-high/60 transition-colors group cursor-pointer" data-cat="Work" data-id="cred-1" data-name="GitHub Enterprise" data-username="elena.vance@org.io">
+<div class="col-span-4 lg:col-span-3 flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center flex-shrink-0 text-secondary shadow-inner">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">GitHub Enterprise</span>
+<span class="material-symbols-outlined text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity" title="Launch domain">open_in_new</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant truncate">github.internal.vance.io</span>
+</div>
+</div>
+<div class="col-span-2 hidden lg:flex items-center">
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-secondary uppercase tracking-wider">
+              Work
+            </span>
+</div>
+<div class="col-span-4 lg:col-span-3 flex flex-col justify-center min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-body-sm text-body-sm text-on-surface truncate">elena.vance@org.io</span>
+<button class="copy-username-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-clipboard="elena.vance@org.io" title="Copy Username">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="password-display font-mono-data text-mono-data text-on-surface-variant tracking-wider">••••••••••••••••</span>
+<button class="toggle-password-btn text-on-surface-variant hover:text-on-surface transition-colors p-0.5" data-secret="ghp_984fNkaLq027xM9Vb8XqWpzL018z3B" title="Reveal Password">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="copy-password-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-secret="ghp_984fNkaLq027xM9Vb8XqWpzL018z3B" title="Copy Secret">
+<span class="material-symbols-outlined text-sm">key</span>
+</button>
+</div>
+</div>
+<div class="col-span-2 hidden xl:flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-mono-key text-mono-key px-2 py-0.5 rounded bg-surface-container text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Strong (128b)
+              </span>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant mt-1">Updated 2d ago</span>
+</div>
+<div class="col-span-4 lg:col-span-2 flex items-center justify-end gap-1">
+<button class="edit-credential-btn p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Edit Credential">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="delete-credential-btn p-1.5 rounded hover:bg-error-container hover:text-on-error-container text-on-surface-variant transition-colors" title="Delete Credential">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="More Enclave Actions">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 2: Stripe Dashboard (Finance) -->
+<div class="credential-row grid grid-cols-12 gap-space-sm px-space-md py-3.5 items-center hover:bg-surface-container-high/60 transition-colors group cursor-pointer" data-cat="Finance" data-id="cred-2" data-name="Stripe Dashboard" data-username="treasury@vance.io">
+<div class="col-span-4 lg:col-span-3 flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center flex-shrink-0 text-tertiary shadow-inner">
+<span class="material-symbols-outlined text-lg">account_balance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Stripe Dashboard</span>
+<span class="material-symbols-outlined text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant truncate">dashboard.stripe.com</span>
+</div>
+</div>
+<div class="col-span-2 hidden lg:flex items-center">
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-tertiary uppercase tracking-wider">
+              Finance
+            </span>
+</div>
+<div class="col-span-4 lg:col-span-3 flex flex-col justify-center min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-body-sm text-body-sm text-on-surface truncate">treasury@vance.io</span>
+<button class="copy-username-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-clipboard="treasury@vance.io" title="Copy Username">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="password-display font-mono-data text-mono-data text-on-surface-variant tracking-wider">••••••••••••••••</span>
+<button class="toggle-password-btn text-on-surface-variant hover:text-on-surface transition-colors p-0.5" data-secret="strp_live_9901_kLx7!#qVaz99" title="Reveal Password">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="copy-password-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-secret="strp_live_9901_kLx7!#qVaz99" title="Copy Secret">
+<span class="material-symbols-outlined text-sm">key</span>
+</button>
+</div>
+</div>
+<div class="col-span-2 hidden xl:flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-mono-key text-mono-key px-2 py-0.5 rounded bg-surface-container text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Strong (114b)
+              </span>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant mt-1">Updated Yesterday</span>
+</div>
+<div class="col-span-4 lg:col-span-2 flex items-center justify-end gap-1">
+<button class="edit-credential-btn p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Edit Credential">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="delete-credential-btn p-1.5 rounded hover:bg-error-container hover:text-on-error-container text-on-surface-variant transition-colors" title="Delete Credential">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="More Enclave Actions">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 3: Figma Cloud (Work) -->
+<div class="credential-row grid grid-cols-12 gap-space-sm px-space-md py-3.5 items-center hover:bg-surface-container-high/60 transition-colors group cursor-pointer" data-cat="Work" data-id="cred-3" data-name="Figma Cloud" data-username="elena@designsys.vance">
+<div class="col-span-4 lg:col-span-3 flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center flex-shrink-0 text-primary shadow-inner">
+<span class="material-symbols-outlined text-lg">polyline</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Figma Cloud</span>
+<span class="material-symbols-outlined text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant truncate">figma.com/@system-ops</span>
+</div>
+</div>
+<div class="col-span-2 hidden lg:flex items-center">
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-secondary uppercase tracking-wider">
+              Work
+            </span>
+</div>
+<div class="col-span-4 lg:col-span-3 flex flex-col justify-center min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-body-sm text-body-sm text-on-surface truncate">elena@designsys.vance</span>
+<button class="copy-username-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-clipboard="elena@designsys.vance" title="Copy Username">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="password-display font-mono-data text-mono-data text-on-surface-variant tracking-wider">••••••••••••••••</span>
+<button class="toggle-password-btn text-on-surface-variant hover:text-on-surface transition-colors p-0.5" data-secret="K9$vL8@zQp#11m00P" title="Reveal Password">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="copy-password-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-secret="K9$vL8@zQp#11m00P" title="Copy Secret">
+<span class="material-symbols-outlined text-sm">key</span>
+</button>
+</div>
+</div>
+<div class="col-span-2 hidden xl:flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-mono-key text-mono-key px-2 py-0.5 rounded bg-surface-container text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Strong (98b)
+              </span>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant mt-1">Updated 5d ago</span>
+</div>
+<div class="col-span-4 lg:col-span-2 flex items-center justify-end gap-1">
+<button class="edit-credential-btn p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Edit Credential">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="delete-credential-btn p-1.5 rounded hover:bg-error-container hover:text-on-error-container text-on-surface-variant transition-colors" title="Delete Credential">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="More Enclave Actions">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 4: Stanford Portal (Education) -->
+<div class="credential-row grid grid-cols-12 gap-space-sm px-space-md py-3.5 items-center hover:bg-surface-container-high/60 transition-colors group cursor-pointer" data-cat="Education" data-id="cred-4" data-name="Stanford Portal" data-username="evance@stanford.edu">
+<div class="col-span-4 lg:col-span-3 flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center flex-shrink-0 text-primary-fixed shadow-inner">
+<span class="material-symbols-outlined text-lg">school</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Stanford Portal</span>
+<span class="material-symbols-outlined text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant truncate">axess.sahr.stanford.edu</span>
+</div>
+</div>
+<div class="col-span-2 hidden lg:flex items-center">
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-primary-fixed uppercase tracking-wider">
+              Education
+            </span>
+</div>
+<div class="col-span-4 lg:col-span-3 flex flex-col justify-center min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-body-sm text-body-sm text-on-surface truncate">evance@stanford.edu</span>
+<button class="copy-username-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-clipboard="evance@stanford.edu" title="Copy Username">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="password-display font-mono-data text-mono-data text-on-surface-variant tracking-wider">••••••••••••••••</span>
+<button class="toggle-password-btn text-on-surface-variant hover:text-on-surface transition-colors p-0.5" data-secret="C4rd1n@l_Rese@rch!2024" title="Reveal Password">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="copy-password-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-secret="C4rd1n@l_Rese@rch!2024" title="Copy Secret">
+<span class="material-symbols-outlined text-sm">key</span>
+</button>
+</div>
+</div>
+<div class="col-span-2 hidden xl:flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-mono-key text-mono-key px-2 py-0.5 rounded bg-surface-container text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Medium (64b)
+              </span>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant mt-1">Created Oct 14, 2024</span>
+</div>
+<div class="col-span-4 lg:col-span-2 flex items-center justify-end gap-1">
+<button class="edit-credential-btn p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Edit Credential">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="delete-credential-btn p-1.5 rounded hover:bg-error-container hover:text-on-error-container text-on-surface-variant transition-colors" title="Delete Credential">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="More Enclave Actions">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 5: Twitter / X (Social Media - Vulnerable Rotation) -->
+<div class="credential-row grid grid-cols-12 gap-space-sm px-space-md py-3.5 items-center hover:bg-surface-container-high/60 transition-colors group cursor-pointer" data-cat="Social Media" data-id="cred-5" data-name="Twitter / X" data-username="@elena_vance">
+<div class="col-span-4 lg:col-span-3 flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center flex-shrink-0 text-on-surface shadow-inner">
+<span class="material-symbols-outlined text-lg">alternate_email</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Twitter / X</span>
+<span class="material-symbols-outlined text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant truncate">x.com/elena_vance</span>
+</div>
+</div>
+<div class="col-span-2 hidden lg:flex items-center">
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-primary uppercase tracking-wider">
+              Social Media
+            </span>
+</div>
+<div class="col-span-4 lg:col-span-3 flex flex-col justify-center min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-body-sm text-body-sm text-on-surface truncate">@elena_vance</span>
+<button class="copy-username-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-clipboard="@elena_vance" title="Copy Username">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="password-display font-mono-data text-mono-data text-error tracking-wider">••••••••••••••••</span>
+<button class="toggle-password-btn text-on-surface-variant hover:text-on-surface transition-colors p-0.5" data-secret="summer2021pass" title="Reveal Password">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="copy-password-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-secret="summer2021pass" title="Copy Secret">
+<span class="material-symbols-outlined text-sm">key</span>
+</button>
+</div>
+</div>
+<div class="col-span-2 hidden xl:flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-mono-key text-mono-key px-2 py-0.5 rounded bg-error-container/30 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span> Urgent Rotation
+              </span>
+</div>
+<span class="font-mono-key text-mono-key text-error mt-1">Reused on 2 services</span>
+</div>
+<div class="col-span-4 lg:col-span-2 flex items-center justify-end gap-1">
+<button class="edit-credential-btn p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Edit Credential">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="delete-credential-btn p-1.5 rounded hover:bg-error-container hover:text-on-error-container text-on-surface-variant transition-colors" title="Delete Credential">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="More Enclave Actions">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 6: Spotify Premium (Entertainment) -->
+<div class="credential-row grid grid-cols-12 gap-space-sm px-space-md py-3.5 items-center hover:bg-surface-container-high/60 transition-colors group cursor-pointer" data-cat="Entertainment" data-id="cred-6" data-name="Spotify Premium" data-username="elena.vance@music.me">
+<div class="col-span-4 lg:col-span-3 flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center flex-shrink-0 text-secondary-fixed shadow-inner">
+<span class="material-symbols-outlined text-lg">music_note</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Spotify Premium</span>
+<span class="material-symbols-outlined text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant truncate">accounts.spotify.com</span>
+</div>
+</div>
+<div class="col-span-2 hidden lg:flex items-center">
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-secondary-fixed uppercase tracking-wider">
+              Entertainment
+            </span>
+</div>
+<div class="col-span-4 lg:col-span-3 flex flex-col justify-center min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-body-sm text-body-sm text-on-surface truncate">elena.vance@music.me</span>
+<button class="copy-username-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-clipboard="elena.vance@music.me" title="Copy Username">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="password-display font-mono-data text-mono-data text-on-surface-variant tracking-wider">••••••••••••••••</span>
+<button class="toggle-password-btn text-on-surface-variant hover:text-on-surface transition-colors p-0.5" data-secret="w8#N7m$kP0!zQwerty" title="Reveal Password">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="copy-password-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-secret="w8#N7m$kP0!zQwerty" title="Copy Secret">
+<span class="material-symbols-outlined text-sm">key</span>
+</button>
+</div>
+</div>
+<div class="col-span-2 hidden xl:flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-mono-key text-mono-key px-2 py-0.5 rounded bg-surface-container text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Strong (102b)
+              </span>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant mt-1">Created Sep 02, 2024</span>
+</div>
+<div class="col-span-4 lg:col-span-2 flex items-center justify-end gap-1">
+<button class="edit-credential-btn p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Edit Credential">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="delete-credential-btn p-1.5 rounded hover:bg-error-container hover:text-on-error-container text-on-surface-variant transition-colors" title="Delete Credential">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="More Enclave Actions">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 7: ProtonMail Enclave (Other) -->
+<div class="credential-row grid grid-cols-12 gap-space-sm px-space-md py-3.5 items-center hover:bg-surface-container-high/60 transition-colors group cursor-pointer" data-cat="Other" data-id="cred-7" data-name="ProtonMail Enclave" data-username="elena.vance@proton.me">
+<div class="col-span-4 lg:col-span-3 flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center flex-shrink-0 text-primary-fixed-dim shadow-inner">
+<span class="material-symbols-outlined text-lg">mark_email_read</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">ProtonMail Enclave</span>
+<span class="material-symbols-outlined text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant truncate">mail.proton.me</span>
+</div>
+</div>
+<div class="col-span-2 hidden lg:flex items-center">
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-outline uppercase tracking-wider">
+              Other
+            </span>
+</div>
+<div class="col-span-4 lg:col-span-3 flex flex-col justify-center min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-body-sm text-body-sm text-on-surface truncate">elena.vance@proton.me</span>
+<button class="copy-username-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-clipboard="elena.vance@proton.me" title="Copy Username">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="password-display font-mono-data text-mono-data text-on-surface-variant tracking-wider">••••••••••••••••</span>
+<button class="toggle-password-btn text-on-surface-variant hover:text-on-surface transition-colors p-0.5" data-secret="9xQ!pL77$Vz#mNoP99" title="Reveal Password">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="copy-password-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-secret="9xQ!pL77$Vz#mNoP99" title="Copy Secret">
+<span class="material-symbols-outlined text-sm">key</span>
+</button>
+</div>
+</div>
+<div class="col-span-2 hidden xl:flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-mono-key text-mono-key px-2 py-0.5 rounded bg-surface-container text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Strong (128b)
+              </span>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant mt-1">Updated 1w ago</span>
+</div>
+<div class="col-span-4 lg:col-span-2 flex items-center justify-end gap-1">
+<button class="edit-credential-btn p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Edit Credential">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="delete-credential-btn p-1.5 rounded hover:bg-error-container hover:text-on-error-container text-on-surface-variant transition-colors" title="Delete Credential">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="More Enclave Actions">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 8: AWS Management Console (Work) -->
+<div class="credential-row grid grid-cols-12 gap-space-sm px-space-md py-3.5 items-center hover:bg-surface-container-high/60 transition-colors group cursor-pointer" data-cat="Work" data-id="cred-8" data-name="AWS Management Console" data-username="iam-root-admin@corp">
+<div class="col-span-4 lg:col-span-3 flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center flex-shrink-0 text-secondary shadow-inner">
+<span class="material-symbols-outlined text-lg">cloud_lock</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">AWS Management Console</span>
+<span class="material-symbols-outlined text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</div>
+<span class="font-mono-data text-mono-data text-on-surface-variant truncate">signin.aws.amazon.com/console</span>
+</div>
+</div>
+<div class="col-span-2 hidden lg:flex items-center">
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-secondary uppercase tracking-wider">
+              Work
+            </span>
+</div>
+<div class="col-span-4 lg:col-span-3 flex flex-col justify-center min-w-0">
+<div class="flex items-center gap-2 mb-0.5">
+<span class="font-body-sm text-body-sm text-on-surface truncate">iam-root-admin@corp</span>
+<button class="copy-username-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-clipboard="iam-root-admin@corp" title="Copy Username">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="password-display font-mono-data text-mono-data text-on-surface-variant tracking-wider">••••••••••••••••</span>
+<button class="toggle-password-btn text-on-surface-variant hover:text-on-surface transition-colors p-0.5" data-secret="AKIA-Vault!98$xK7v902Lm#q88" title="Reveal Password">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+<button class="copy-password-btn text-on-surface-variant hover:text-secondary transition-colors p-0.5" data-secret="AKIA-Vault!98$xK7v902Lm#q88" title="Copy Secret">
+<span class="material-symbols-outlined text-sm">key</span>
+</button>
+</div>
+</div>
+<div class="col-span-2 hidden xl:flex flex-col justify-center">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-mono-key text-mono-key px-2 py-0.5 rounded bg-surface-container text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Strong (140b)
+              </span>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant mt-1">Updated 3w ago</span>
+</div>
+<div class="col-span-4 lg:col-span-2 flex items-center justify-end gap-1">
+<button class="edit-credential-btn p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Edit Credential">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="delete-credential-btn p-1.5 rounded hover:bg-error-container hover:text-on-error-container text-on-surface-variant transition-colors" title="Delete Credential">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="More Enclave Actions">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Grid View (Initially hidden or switchable via JS) -->
+<div class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-space-md mb-space-xl" id="vaultGridView">
+<!-- Grid Card 1 -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-md hover:bg-surface-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary shadow-inner">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-secondary uppercase">Work</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">GitHub Enterprise</h3>
+<span class="font-mono-data text-mono-data text-on-surface-variant block mt-0.5 truncate">github.internal.vance.io</span>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg mt-space-sm flex flex-col gap-1">
+<span class="font-mono-key text-mono-key text-on-surface-variant">Identity:</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">elena.vance@org.io</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md border-t-0">
+<span class="font-mono-key text-mono-key text-secondary">Strong (128b)</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-secondary"><span class="material-symbols-outlined text-base">key</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-base">edit</span></button>
+</div>
+</div>
+</div>
+<!-- Grid Card 2 -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-md hover:bg-surface-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-tertiary shadow-inner">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-tertiary uppercase">Finance</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Stripe Dashboard</h3>
+<span class="font-mono-data text-mono-data text-on-surface-variant block mt-0.5 truncate">dashboard.stripe.com</span>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg mt-space-sm flex flex-col gap-1">
+<span class="font-mono-key text-mono-key text-on-surface-variant">Identity:</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">treasury@vance.io</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md">
+<span class="font-mono-key text-mono-key text-secondary">Strong (114b)</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-secondary"><span class="material-symbols-outlined text-base">key</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-base">edit</span></button>
+</div>
+</div>
+</div>
+<!-- Grid Card 3 -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-md hover:bg-surface-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-error shadow-inner">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-primary uppercase">Social</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Twitter / X</h3>
+<span class="font-mono-data text-mono-data text-on-surface-variant block mt-0.5 truncate">x.com/elena_vance</span>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg mt-space-sm flex flex-col gap-1">
+<span class="font-mono-key text-mono-key text-on-surface-variant">Identity:</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">@elena_vance</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md">
+<span class="font-mono-key text-mono-key text-error">Urgent Rotation</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-secondary"><span class="material-symbols-outlined text-base">key</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-base">edit</span></button>
+</div>
+</div>
+</div>
+<!-- Grid Card 4 -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-md hover:bg-surface-container transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary shadow-inner">
+<span class="material-symbols-outlined">cloud_lock</span>
+</div>
+<span class="font-badge-label text-badge-label px-2 py-0.5 rounded bg-surface-container-highest text-secondary uppercase">Work</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">AWS Console</h3>
+<span class="font-mono-data text-mono-data text-on-surface-variant block mt-0.5 truncate">signin.aws.amazon.com</span>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg mt-space-sm flex flex-col gap-1">
+<span class="font-mono-key text-mono-key text-on-surface-variant">Identity:</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">iam-root-admin@corp</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-md">
+<span class="font-mono-key text-mono-key text-secondary">Strong (140b)</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-secondary"><span class="material-symbols-outlined text-base">key</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface"><span class="material-symbols-outlined text-base">edit</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- UI States Showcase Section -->
+<div class="mt-space-xl mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">tune</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Enclave State &amp; Diagnostic Views</h2>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant">INTERACTION FIDELITY MATRIX</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- 1. Skeleton Loading Shimmer State -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-sm shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-mono-key text-mono-key uppercase text-on-surface-variant">State: Loading Shimmer</span>
+<span class="font-mono-key text-mono-key text-secondary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span> Encrypting...
+            </span>
+</div>
+<div class="space-y-3 pt-2">
+<div class="h-10 bg-surface-container rounded-lg animate-pulse"></div>
+<div class="h-10 bg-surface-container rounded-lg animate-pulse"></div>
+<div class="h-10 bg-surface-container rounded-lg animate-pulse"></div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-mono-key text-mono-key text-on-surface-variant">Deriving keys &amp; encrypting payload...</span>
+<div class="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+</div>
+</div>
+<!-- 2. Interactive Toast / Alert Previews -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-sm shadow-md justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-mono-key text-mono-key uppercase text-on-surface-variant">State: Telemetry Toasts</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant">Live Notifications</span>
+</div>
+<!-- Success Toast -->
+<div class="bg-surface-container p-3 rounded-lg flex items-center justify-between shadow-sm mb-2.5">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Credential added &amp; sealed</span>
+</div>
+<button class="font-mono-key text-mono-key text-secondary hover:underline">UNDO</button>
+</div>
+<!-- Error Toast -->
+<div class="bg-error-container/20 p-3 rounded-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-error text-base">error</span>
+<span class="font-body-sm text-body-sm text-error truncate">Decryption failed: Local timeout</span>
+</div>
+<button class="font-mono-key text-mono-key text-error hover:underline flex-shrink-0">RETRY</button>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<button class="w-full py-1.5 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-body-sm text-body-sm transition-colors cursor-pointer text-center" id="triggerTestToastBtn">
+              Trigger Notification Sample
+            </button>
+</div>
+</div>
+<!-- 3. Clean Empty State Preview Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col items-center justify-center text-center shadow-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-2xl">lock_open</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">No Credentials In Category</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-1">
+            Zero entries found matching filter. Stored items in other partitions remain untouched.
+          </p>
+<button class="mt-3 px-space-md py-1.5 bg-surface-container hover:bg-surface-container-high text-secondary rounded font-mono-key text-mono-key transition-colors cursor-pointer">
+            + Add First Entry
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- ADD CREDENTIAL MODAL DIALOG (Interactive Overlay) -->
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center p-space-md hidden" id="addCredentialModal">
+<div class="bg-surface-container-low rounded-xl shadow-2xl max-w-xl w-full p-space-lg relative flex flex-col gap-space-md max-h-[921px] overflow-y-auto">
+<!-- Modal Header -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">key_vertical</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold">Add New Credential</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Encrypt &amp; store zero-knowledge secret in personal enclave
+          </span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded transition-colors cursor-pointer" id="closeAddModalBtn">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Add Form -->
+<form class="flex flex-col gap-space-md" id="addCredentialForm" onsubmit="return false;">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Website Name -->
+<div class="flex flex-col gap-1">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Website Name</label>
+<div class="relative">
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner placeholder:text-on-surface-variant/50" id="newWebName" placeholder="e.g. Linear App" required="" type="text"/>
+</div>
+</div>
+<!-- Website URL -->
+<div class="flex flex-col gap-1">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Login URL</label>
+<div class="relative">
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner placeholder:text-on-surface-variant/50" id="newWebUrl" placeholder="https://linear.app/login" required="" type="url"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Username / Identity -->
+<div class="flex flex-col gap-1">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Username / Identity</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner placeholder:text-on-surface-variant/50" id="newUsername" placeholder="elena.vance@org.io" required="" type="text"/>
+</div>
+<!-- Category Select -->
+<div class="flex flex-col gap-1">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Enclave Partition</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container text-on-surface px-space-md pr-8 py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner cursor-pointer" id="newCategory">
+<option value="Work">Work</option>
+<option value="Finance">Finance</option>
+<option value="Social Media">Social Media</option>
+<option value="Education">Education</option>
+<option value="Entertainment">Entertainment</option>
+<option value="Other">Other</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-base">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Password Field with Generator Button & Strength Meter -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Master Secret / Password</label>
+<button class="flex items-center gap-1 font-mono-key text-mono-key text-secondary hover:underline cursor-pointer" id="generatePasswordBtn" type="button">
+<span class="material-symbols-outlined text-xs">auto_fix_high</span>
+<span>Generate 24-char Secret</span>
+</button>
+</div>
+<div class="relative">
+<input class="w-full font-mono-data text-mono-data bg-surface-container text-on-surface pl-space-md pr-24 py-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="newPassword" placeholder="Enter or auto-generate..." required="" type="text"/>
+<button class="absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface p-1 cursor-pointer" id="toggleModalPasswordVis" type="button">
+<span class="material-symbols-outlined text-base">visibility</span>
+</button>
+</div>
+<!-- Strength Bar Indicator -->
+<div class="flex items-center gap-2 mt-1">
+<div class="flex-1 h-1.5 bg-surface-container rounded-full overflow-hidden flex gap-1">
+<div class="h-full w-1/3 bg-secondary rounded-full"></div>
+<div class="h-full w-1/3 bg-secondary rounded-full"></div>
+<div class="h-full w-1/3 bg-secondary rounded-full"></div>
+</div>
+<span class="font-mono-key text-mono-key text-secondary flex-shrink-0">Entropy: 142 bits (Entropy Max)</span>
+</div>
+</div>
+<!-- Secure Notes -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Hardware-Sealed Notes (Optional)</label>
+<span class="font-mono-key text-mono-key text-on-surface-variant">Markdown supported</span>
+</div>
+<textarea class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-inner placeholder:text-on-surface-variant/50" id="newNotes" placeholder="Recovery codes, 2FA backup seed, security questions..." rows="3"></textarea>
+</div>
+<!-- Validation Error Message Area (Simulated) -->
+<div class="hidden bg-error-container/20 text-error p-space-sm rounded-lg flex items-center gap-2 font-body-sm text-body-sm" id="modalErrorState">
+<span class="material-symbols-outlined text-base">warning</span>
+<span>URL format invalid or identity empty. Please re-verify.</span>
+</div>
+<!-- Modal Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-space-sm">
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-body-md text-body-md cursor-pointer" id="cancelAddModalBtn" type="button">
+            Cancel
+          </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary font-body-md text-body-md font-semibold px-space-md py-2 rounded-lg hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all shadow-[0_0_14px_rgba(124,92,255,0.4)] cursor-pointer" id="saveCredentialBtn" type="submit">
+<span class="material-symbols-outlined text-base">lock</span>
+<span>Encrypt &amp; Save to Vault</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- EDIT / PREVIEW CREDENTIAL MODAL DIALOG -->
+<div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center p-space-md hidden" id="editCredentialModal">
+<div class="bg-surface-container-low rounded-xl shadow-2xl max-w-xl w-full p-space-lg relative flex flex-col gap-space-md max-h-[921px] overflow-y-auto">
+<!-- Modal Header -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">security_update</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold" id="editModalTitle">Edit Credential: Stripe Dashboard</h2>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant mt-0.5">
+            Last modified: Yesterday 14:22 UTC // Enclave Revision 4
+          </span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded transition-colors cursor-pointer" id="closeEditModalBtn">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+<!-- Edit Form -->
+<form class="flex flex-col gap-space-md" id="editCredentialForm" onsubmit="return false;">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Website Name</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="editWebName" type="text" value="Stripe Dashboard"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Website URL</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="editWebUrl" type="url" value="https://dashboard.stripe.com"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Username / Identity</label>
+<input class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="editUsername" type="text" value="treasury@vance.io"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Enclave Partition</label>
+<select class="w-full appearance-none bg-surface-container text-on-surface px-space-md pr-8 py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-inner cursor-pointer" id="editCategory">
+<option selected="" value="Finance">Finance</option>
+<option value="Work">Work</option>
+<option value="Social Media">Social Media</option>
+<option value="Education">Education</option>
+<option value="Entertainment">Entertainment</option>
+<option value="Other">Other</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Decrypted Secret</label>
+<span class="font-mono-key text-mono-key text-secondary">Integrity: Validated</span>
+</div>
+<input class="w-full font-mono-data text-mono-data bg-surface-container text-on-surface px-space-md py-2 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" id="editPassword" type="text" value="strp_live_9901_kLx7!#qVaz99"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-mono-key text-mono-key uppercase text-on-surface-variant">Notes / Recovery Seeds</label>
+<textarea class="w-full bg-surface-container text-on-surface px-space-md py-2 rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" rows="2">Corporate master banking keys. Requires physical YubiKey 5Ci token.</textarea>
+</div>
+<!-- Modal Actions with Danger Option -->
+<div class="flex items-center justify-between pt-space-sm">
+<button class="flex items-center gap-1.5 text-error hover:bg-error-container/20 px-space-md py-2 rounded-lg transition-colors font-body-sm text-body-sm cursor-pointer" id="deleteCurrentModalBtn" type="button">
+<span class="material-symbols-outlined text-base">delete_forever</span>
+<span>Permanently Purge</span>
+</button>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors font-body-md text-body-md cursor-pointer" id="cancelEditModalBtn" type="button">
+              Cancel
+            </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary font-body-md text-body-md font-semibold px-space-md py-2 rounded-lg hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all shadow-[0_0_14px_rgba(124,92,255,0.4)] cursor-pointer" id="saveEditCredentialBtn" type="submit">
+<span class="material-symbols-outlined text-base">check</span>
+<span>Update Credential</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- FLOATING INTERACTIVE TOAST NOTIFICATION CONTAINER -->
+<div class="fixed bottom-6 right-6 z-50 transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none" id="dynamicToast">
+<div class="bg-surface-container-high text-on-surface px-space-md py-3 rounded-xl shadow-2xl flex items-center gap-space-sm border-0">
+<span class="material-symbols-outlined text-secondary text-lg" id="dynamicToastIcon">task_alt</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold" id="dynamicToastTitle">Zero-Knowledge Sealed</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant" id="dynamicToastSub">Data copied securely to clipboard</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dynamic Vanilla JS Controller -->
+<script>
+  (function initBlockVault() {
+    // 1. Toast Trigger Utility
+    const toast = document.getElementById('dynamicToast');
+    const toastTitle = document.getElementById('dynamicToastTitle');
+    const toastSub = document.getElementById('dynamicToastSub');
+    const toastIcon = document.getElementById('dynamicToastIcon');
+
+    function showToast(title, subtitle, icon = 'task_alt', isError = false) {
+      if (!toast) return;
+      toastTitle.textContent = title;
+      toastSub.textContent = subtitle;
+      toastIcon.textContent = icon;
+      toastIcon.className = `material-symbols-outlined text-lg ${isError ? 'text-error' : 'text-secondary'}`;
+      
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3200);
+    }
+
+    // 2. Modals Control
+    const addModal = document.getElementById('addCredentialModal');
+    const editModal = document.getElementById('editCredentialModal');
+    const openAddBtn = document.getElementById('openAddModalBtn');
+    const closeAddBtn = document.getElementById('closeAddModalBtn');
+    const cancelAddBtn = document.getElementById('cancelAddModalBtn');
+    const closeEditBtn = document.getElementById('closeEditModalBtn');
+    const cancelEditBtn = document.getElementById('cancelEditModalBtn');
+
+    openAddBtn?.addEventListener('click', () => {
+      addModal?.classList.remove('hidden');
+    });
+
+    [closeAddBtn, cancelAddBtn].forEach(b => {
+      b?.addEventListener('click', () => {
+        addModal?.classList.add('hidden');
+      });
+    });
+
+    [closeEditBtn, cancelEditBtn].forEach(b => {
+      b?.addEventListener('click', () => {
+        editModal?.classList.add('hidden');
+      });
+    });
+
+    // 3. Password Generator in Modal
+    const genBtn = document.getElementById('generatePasswordBtn');
+    const passInput = document.getElementById('newPassword');
+    genBtn?.addEventListener('click', () => {
+      const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#$%^&*()_+~|}{[]';
+      let result = '';
+      for (let i = 0; i < 24; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      if (passInput) passInput.value = result;
+      showToast('Generated 24-char Key', 'Entropy calculated at 142 bits', 'auto_fix_high');
+    });
+
+    // 4. Save Credential Submission
+    const saveCredBtn = document.getElementById('saveCredentialBtn');
+    saveCredBtn?.addEventListener('click', () => {
+      const name = document.getElementById('newWebName')?.value;
+      if (!name) {
+        const err = document.getElementById('modalErrorState');
+        err?.classList.remove('hidden');
+        return;
+      }
+      addModal?.classList.add('hidden');
+      showToast('Credential Encrypted & Saved', `${name} sealed into enclave`, 'lock');
+    });
+
+    // 5. Copy Buttons & Secret Mask Reveal in Rows
+    document.querySelectorAll('.copy-username-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const text = btn.getAttribute('data-clipboard');
+        navigator.clipboard?.writeText(text);
+        showToast('Username Copied', text, 'content_copy');
+      });
+    });
+
+    document.querySelectorAll('.copy-password-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const secret = btn.getAttribute('data-secret');
+        navigator.clipboard?.writeText(secret);
+        showToast('Secret Key Copied', 'Encrypted buffer safely loaded into clipboard', 'key');
+      });
+    });
+
+    document.querySelectorAll('.toggle-password-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const secret = btn.getAttribute('data-secret');
+        const row = btn.closest('.credential-row');
+        const display = row?.querySelector('.password-display');
+        const icon = btn.querySelector('.material-symbols-outlined');
+        
+        if (display && display.textContent.includes('••')) {
+          display.textContent = secret;
+          display.classList.add('text-secondary');
+          if (icon) icon.textContent = 'visibility_off';
+        } else if (display) {
+          display.textContent = '••••••••••••••••';
+          display.classList.remove('text-secondary');
+          if (icon) icon.textContent = 'visibility';
+        }
+      });
+    });
+
+    // 6. Edit & Delete Row Interactions
+    document.querySelectorAll('.edit-credential-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const row = btn.closest('.credential-row');
+        const name = row?.getAttribute('data-name') || 'Credential';
+        const title = document.getElementById('editModalTitle');
+        if (title) title.textContent = `Edit Credential: ${name}`;
+        editModal?.classList.remove('hidden');
+      });
+    });
+
+    document.querySelectorAll('.delete-credential-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const row = btn.closest('.credential-row');
+        const name = row?.getAttribute('data-name') || 'Item';
+        if (confirm(`Are you certain you wish to purge "${name}" from hardware memory?`)) {
+          row?.remove();
+          showToast('Credential Purged', `${name} erased from enclave memory`, 'delete', true);
+        }
+      });
+    });
+
+    // 7. Category Filter Pill Clicking
+    const categoryPills = document.querySelectorAll('.category-pill');
+    const rows = document.querySelectorAll('.credential-row');
+
+    categoryPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        categoryPills.forEach(p => {
+          p.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold');
+          p.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        pill.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        pill.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold');
+
+        const cat = pill.getAttribute('data-cat');
+        rows.forEach(r => {
+          const rowCat = r.getAttribute('data-cat');
+          if (cat === 'all' || rowCat === cat) {
+            r.classList.remove('hidden');
+          } else {
+            r.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 8. Search Filter
+    const searchInput = document.getElementById('credentialSearchInput');
+    searchInput?.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      rows.forEach(r => {
+        const text = r.textContent.toLowerCase();
+        if (text.includes(q)) {
+          r.classList.remove('hidden');
+        } else {
+          r.classList.add('hidden');
+        }
+      });
+    });
+
+    // 9. View Switcher (Table vs Grid)
+    const viewTableBtn = document.getElementById('viewTableBtn');
+    const viewGridBtn = document.getElementById('viewGridBtn');
+    const tableView = document.getElementById('vaultTableView');
+    const gridView = document.getElementById('vaultGridView');
+
+    viewTableBtn?.addEventListener('click', () => {
+      tableView?.classList.remove('hidden');
+      gridView?.classList.add('hidden');
+      viewTableBtn.classList.add('bg-surface-container-high', 'text-secondary');
+      viewTableBtn.classList.remove('text-on-surface-variant');
+      viewGridBtn?.classList.remove('bg-surface-container-high', 'text-secondary');
+      viewGridBtn?.classList.add('text-on-surface-variant');
+    });
+
+    viewGridBtn?.addEventListener('click', () => {
+      tableView?.classList.add('hidden');
+      gridView?.classList.remove('hidden');
+      gridView?.classList.add('grid');
+      viewGridBtn.classList.add('bg-surface-container-high', 'text-secondary');
+      viewGridBtn.classList.remove('text-on-surface-variant');
+      viewTableBtn?.classList.remove('bg-surface-container-high', 'text-secondary');
+      viewTableBtn?.classList.add('text-on-surface-variant');
+    });
+
+    // 10. Test Notification Trigger Button
+    const triggerToastBtn = document.getElementById('triggerTestToastBtn');
+    triggerToastBtn?.addEventListener('click', () => {
+      showToast('Enclave Heartbeat Confirmed', 'Zero-knowledge proofs matched across 4 shards', 'verified_user');
+    });
+  })();
+</script></main></div></body></html>

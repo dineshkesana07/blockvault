@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>BlockVault - Zero-Knowledge Credential Orchestration</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"secondary":"#5de6ff","surface-container-low":"#161b2b","on-background":"#dee1f9","surface":"#0e1323","tertiary-fixed-dim":"#ffb780","on-primary-fixed":"#1c0062","error":"#ffb4ab","error-container":"#93000a","secondary-fixed":"#a2eeff","primary-container":"#947dff","on-primary-fixed-variant":"#4816cb","surface-container-highest":"#2f3446","on-tertiary":"#4e2600","on-secondary-fixed-variant":"#004e5a","on-error":"#690005","tertiary-fixed":"#ffdcc4","secondary-fixed-dim":"#2fd9f4","on-tertiary-fixed":"#2f1400","on-surface-variant":"#c9c4d8","on-primary-container":"#2a0088","inverse-on-surface":"#2b3041","outline":"#938ea1","surface-container":"#1a1f30","primary":"#cabeff","background":"#0e1323","surface-container-lowest":"#080d1d","primary-fixed-dim":"#cabeff","secondary-container":"#00cbe6","on-tertiary-container":"#442000","surface-variant":"#2f3446","surface-container-high":"#25293a","on-secondary-fixed":"#001f25","outline-variant":"#484555","on-error-container":"#ffdad6","surface-bright":"#34394a","on-secondary":"#00363e","inverse-surface":"#dee1f9","surface-dim":"#0e1323","primary-fixed":"#e6deff","inverse-primary":"#603ce2","tertiary-container":"#d7791f","tertiary":"#ffb780","on-primary":"#31009a","on-surface":"#dee1f9","surface-tint":"#cabeff","on-tertiary-fixed-variant":"#6f3800","on-secondary-container":"#00515d"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter":"1.5rem","margin":"2rem","space-sm":"0.5rem","gutter-mobile":"0.75rem","margin-mobile":"1rem","space-lg":"1.5rem","space-md":"1rem","space-xl":"2.5rem","space-xs":"0.25rem"},"fontFamily":{"headline-sm":["Inter"],"body-md":["Inter"],"mono-data":["JetBrains Mono"],"display-hero":["Inter"],"display-hero-mobile":["Inter"],"mono-key":["JetBrains Mono"],"body-lg":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"],"headline-md":["Inter"],"badge-label":["JetBrains Mono"]},"fontSize":{"headline-sm":["18px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"mono-data":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"400"}],"display-hero":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-hero-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.015em","fontWeight":"700"}],"mono-key":["11px",{"lineHeight":"14px","letterSpacing":"0.05em","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"badge-label":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="h-20 max-w-7xl mx-auto px-margin flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="BlockVault Emblem" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VCenrYkHi5yETyKHoMmBCjZkMzR0v6MHDNPi8aIQ4nYICf4rZB-V0mFkwUXiHVhrVRj4KGAjkDpxpLdMNw3Xl7bBeBlL6jT2gAtl-846gQfkwMD1XNtO1kve00egxpI37kPO8R0iirfZuszffgIDvcHsW_WGDENfJw5wfpT6H508NJMbxkvdz4MYt0n3DhGEqeoGJpHPeeNp5JJsp7imt3G8JdHrxXWTrzwS8hpzTB"/><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase">BlockVault</span><span class="font-mono-key text-mono-key px-space-xs py-0.5 rounded-sm bg-surface-container text-secondary uppercase">v3.4-ZKP</span></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="features" href="#">Features</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="architecture" href="#">Architecture</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="security-center" href="#">Security Center</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="enterprise" href="#">Enterprise</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing" href="#">Pricing</a></nav><div class="flex items-center gap-space-md"><a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors px-space-md py-space-sm" data-path="login" href="#">Unlock Vault</a><a class="font-body-md text-body-md font-semibold bg-primary text-on-primary hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all px-space-md py-space-sm rounded-lg shadow-[0_0_12px_rgba(124,92,255,0.35)]" data-path="register" href="#">Get Started</a><img alt="Profile" class="w-8 h-8 rounded-full object-cover hidden sm:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGOfymuL-Gsw8JS_oxfEU03ebQuTrixjuBcwbwF3PJMJihxslzYZC44T8KRWqCQksVQZWOmAa2f-arDOaX2XXKHM9Z9qGE8mEU7qALIBGeNCVUfEGIDtWRmqAxWlTHmA4MInjYEBm8uu-Sd6Br5JK47_ouFxilqQ-Llg_MWQ5oonHYDmG48loOq6j_V38SBe6I2j8PbrNcCuBy4lYp8tJnOjk_ItSwOFLFVs28oag"/></div></div></header><main class="w-full pt-20 bg-background flex-1"><div class="flex flex-col w-full">
+<!-- Top Atmospheric Grid Glow -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[760px] h-[380px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute top-64 right-1/4 w-[420px] h-[240px] bg-secondary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- 1. HERO SECTION -->
+<section class="relative max-w-7xl mx-auto px-margin pt-space-xl pb-24 flex flex-col items-center text-center">
+<!-- Overline Tag -->
+<div class="inline-flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container shadow-[0_0_12px_rgba(34,211,238,0.08)] mb-space-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-mono-key text-mono-key text-secondary uppercase tracking-widest">Argon2id + XChaCha20-Poly1305 Engine</span>
+<span class="text-on-surface-variant font-mono-key text-mono-key">/</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant">Zero-Trust V3</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display-hero text-display-hero md:text-[54px] md:leading-[62px] text-on-surface max-w-4xl tracking-tight mb-space-md">
+        Zero-Knowledge Password Management for the <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-fixed-dim to-secondary">Sovereign Web</span>.
+      </h1>
+<!-- Subheadline -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-space-xl">
+        Store, synthesize, and synchronize cryptographic credentials across enterprise infrastructure with zero-trust architecture and client-side isolation.
+      </p>
+<!-- Action CTA Row -->
+<div class="flex flex-wrap items-center justify-center gap-space-md mb-16 w-full max-w-xl">
+<a class="flex items-center justify-center gap-space-sm bg-primary text-on-primary font-headline-sm text-body-md px-space-xl py-3 rounded-lg shadow-[0_0_20px_rgba(124,92,255,0.4)] hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all group" href="#demo">
+<span>Launch Your Vault</span>
+<span class="material-symbols-outlined text-body-lg group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+<a class="flex items-center justify-center gap-space-sm bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-md px-space-lg py-3 rounded-lg shadow-sm transition-all" href="#architecture">
+<span class="material-symbols-outlined text-secondary text-body-lg">terminal</span>
+<span>Explore Architecture</span>
+</a>
+<!-- Terminal Command Snippet -->
+<button class="w-full sm:w-auto flex items-center justify-between gap-space-md px-space-md py-2.5 rounded-lg bg-surface-container-lowest shadow-inner text-left group" onclick="navigator.clipboard.writeText('npx @blockvault/cli init'); this.querySelector('#copy-tag').textContent = 'COPIED!';">
+<div class="flex items-center gap-space-xs font-mono-data text-mono-data text-secondary">
+<span class="text-outline-variant">$</span>
+<span>npx @blockvault/cli init</span>
+</div>
+<span class="font-mono-key text-mono-key text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded uppercase" id="copy-tag">copy</span>
+</button>
+</div>
+<!-- High-Fidelity Vault UI Preview -->
+<div class="w-full max-w-4xl relative">
+<!-- Emissive Border Glow Container -->
+<div class="relative rounded-xl p-1 bg-gradient-to-b from-primary/30 via-surface-container to-surface-container-lowest shadow-[0_24px_64px_-12px_rgba(0,0,0,0.8)]">
+<div class="rounded-lg bg-surface-container-low p-4 md:p-6 text-left overflow-hidden">
+<!-- Window Titlebar -->
+<div class="flex items-center justify-between pb-4 mb-5 border-b border-surface-container-highest">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-error/70"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary/70"></span>
+<span class="w-3 h-3 rounded-full bg-secondary/70"></span>
+<span class="font-mono-key text-mono-key text-on-surface-variant ml-2">vault-session-local // authenticated [FIDO2-ECC]</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1 font-mono-key text-mono-key px-2 py-0.5 rounded bg-surface text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> TLS 1.3 PINNED
+                </span>
+<span class="font-mono-key text-mono-key text-outline">NONCE: #98f3c7a1</span>
+</div>
+</div>
+<!-- Active Vault Item Mockup -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<!-- Left: Credential Item Highlight -->
+<div class="md:col-span-7 bg-surface-container p-space-md rounded-lg shadow-sm space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-11 h-11 rounded-lg bg-surface-container-lowest flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-secondary text-2xl">hub</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">GitHub Enterprise</h4>
+<span class="px-2 py-0.5 rounded-full text-secondary font-mono-key text-mono-key bg-secondary/10">CORE VENDOR</span>
+</div>
+<p class="font-mono-data text-mono-data text-on-surface-variant">sso.internal.githubcorp.net</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface text-secondary font-mono-key text-mono-key">STRENGTH 99.4%</span>
+</div>
+<!-- Credential Fields -->
+<div class="space-y-space-xs pt-1">
+<div class="flex items-center justify-between bg-surface-container-lowest px-3 py-2 rounded">
+<span class="font-mono-key text-mono-key text-on-surface-variant">IDENTITY</span>
+<span class="font-mono-data text-mono-data text-on-surface">sec-ops-lead@blockvault.sys</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest px-3 py-2 rounded">
+<span class="font-mono-key text-mono-key text-on-surface-variant">CIPHERTEXT SECRET</span>
+<div class="flex items-center gap-space-sm font-mono-data text-mono-data text-primary">
+<span>•••• •••• •••• 9wK#</span>
+<button class="text-secondary hover:text-on-surface transition-colors" title="Copy Secret"><span class="material-symbols-outlined text-body-md">content_copy</span></button>
+</div>
+</div>
+</div>
+<!-- Live Derivation Telemetry -->
+<div class="flex items-center justify-between pt-2 text-on-surface-variant font-mono-key text-mono-key">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-sm">shield</span> Client Autofill Shield Active
+                  </span>
+<span>Argon2id · 64MB · 3 passes</span>
+</div>
+</div>
+<!-- Right: Telemetry Diagnostic Graph & Key Spec -->
+<div class="md:col-span-5 bg-surface-container-lowest p-space-md rounded-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-mono-key text-mono-key text-outline">CRYPTOGRAPHIC HEALTH</span>
+<span class="font-mono-key text-mono-key text-secondary">ENTROPY: 128.4 BITS</span>
+</div>
+<!-- SVG Sparkline & Distribution -->
+<div class="h-20 w-full relative flex items-end">
+<svg class="w-full h-full text-secondary/30" fill="none" viewbox="0 0 200 60">
+<path d="M 0,50 L 25,42 L 50,48 L 75,25 L 100,32 L 125,18 L 150,22 L 175,8 L 200,12" stroke="#5de6ff" stroke-linecap="round" stroke-width="2"></path>
+<path d="M 0,50 L 25,42 L 50,48 L 75,25 L 100,32 L 125,18 L 150,22 L 175,8 L 200,12 L 200,60 L 0,60 Z" fill="currentColor"></path>
+</svg>
+<div class="absolute top-1 right-2 font-mono-data text-mono-data text-secondary">8.2ms</div>
+</div>
+<div class="space-y-1.5 font-mono-key text-mono-key">
+<div class="flex justify-between text-on-surface-variant">
+<span>Key Rotation Interval:</span>
+<span class="text-on-surface">14d remaining</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>FIDO2 Attestation Level:</span>
+<span class="text-secondary">Level 3 (Hardware PIV)</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Sync Ledger Node:</span>
+<span class="text-on-surface">ch-fra-node-04</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. LIVE METRICS RIBBON -->
+<section class="w-full bg-surface-container-lowest shadow-inner py-10">
+<div class="max-w-7xl mx-auto px-margin grid grid-cols-2 md:grid-cols-4 gap-space-lg">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-lg text-headline-lg text-secondary font-mono-data tracking-tight">99.999%</span>
+</div>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Vault Engine Uptime</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant uppercase">SLA Measured Globally</span>
+</div>
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-lg text-headline-lg text-primary font-mono-data tracking-tight">0</span>
+</div>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Plaintext Leaks Recorded</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant uppercase">Since System Inception</span>
+</div>
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-lg text-headline-lg text-secondary font-mono-data tracking-tight">&lt; 12ms</span>
+</div>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Key Derivation Latency</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant uppercase">WASM Client Runtime</span>
+</div>
+<div class="flex flex-col space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-lg text-headline-lg text-tertiary-fixed-dim font-mono-data tracking-tight">4.8M+</span>
+</div>
+<span class="font-headline-sm text-body-md text-on-surface font-semibold">Secrets Guarded</span>
+<span class="font-mono-key text-mono-key text-on-surface-variant uppercase">Across 140+ Jurisdictions</span>
+</div>
+</div>
+</section>
+<!-- 3. ARCHITECTURAL PILLARS -->
+<section class="max-w-7xl mx-auto px-margin py-24" id="architecture">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-space-md">
+<div>
+<span class="font-mono-key text-mono-key text-secondary uppercase tracking-wider block mb-2">// SECURITY ARCHITECTURE</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[34px] md:leading-[42px] text-on-surface max-w-xl">
+            Mathematical Assurance Over Institutional Trust.
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Every secret is encrypted before it leaves system memory. Our servers persist only blind ciphertext hashes, eliminating entire classes of credential vulnerabilities.
+        </p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container p-space-xl rounded-xl shadow-sm hover:bg-surface-container-high transition-colors flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary mb-space-lg">
+<span class="material-symbols-outlined text-2xl">memory</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Client-Side Cryptographic Isolation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+              Keys are generated and computed inside WebAssembly sandbox spaces or native OS secure enclaves. Master passwords never touch raw network sockets, leaving zero telemetry for interception.
+            </p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded font-mono-data text-mono-data text-secondary flex items-center justify-between">
+<span>crypto.subtle.deriveKey(Argon2id)</span>
+<span class="text-outline">CLIENT_MEM</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container p-space-xl rounded-xl shadow-sm hover:bg-surface-container-high transition-colors flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary mb-space-lg">
+<span class="material-symbols-outlined text-2xl">receipt_long</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Immutable Tamper-Evident Ledger</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+              Every read, rotation, and authorization request creates a cryptographically signed Merkle tree entry. Unauthorized structural modifications trigger instant hardware enclave invalidation.
+            </p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded font-mono-data text-mono-data text-primary flex items-center justify-between">
+<span>SHA256(Block[n-1] + Nonce)</span>
+<span class="text-outline">VERIFIED</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container p-space-xl rounded-xl shadow-sm hover:bg-surface-container-high transition-colors flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-tertiary mb-space-lg">
+<span class="material-symbols-outlined text-2xl">token</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Quantum-Resistant Synthesis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+              Employs Kyber lattice-based post-quantum key encapsulation algorithms (PQ-KEM) alongside dictionary modeling to withstand Shor's algorithm attacks and harvest-now-decrypt-later vectors.
+            </p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded font-mono-data text-mono-data text-tertiary flex items-center justify-between">
+<span>CRYSTALS-Kyber-1024 Compliant</span>
+<span class="text-outline">NIST_PQ</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container p-space-xl rounded-xl shadow-sm hover:bg-surface-container-high transition-colors flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary mb-space-lg">
+<span class="material-symbols-outlined text-2xl">fingerprint</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Biometric &amp; FIDO2 Hardware Binding</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+              Hardware attestation binds master vault unlocks directly to physical security keys (YubiKey 5 Series, Apple Secure Enclave, and Windows Hello TPM 2.0 chips) for phish-proof operations.
+            </p>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded font-mono-data text-mono-data text-secondary flex items-center justify-between">
+<span>FIDO2 / WebAuthn Level 3</span>
+<span class="text-outline">HARDWARE_PIV</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. INTERACTIVE VAULT DEMO WIDGET -->
+<section class="max-w-7xl mx-auto px-margin py-16" id="demo">
+<div class="bg-surface-container-low rounded-2xl p-6 md:p-12 shadow-xl">
+<div class="max-w-3xl mx-auto space-y-space-lg">
+<div class="text-center space-y-2">
+<span class="font-mono-key text-mono-key text-secondary uppercase">// REAL-TIME ENTROPY SIMULATOR</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Client-Side Password Synthesizer</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Test the entropy dynamics of cryptographically pure pseudo-random generation directly in your browser session.</p>
+</div>
+<!-- Password Display Box -->
+<div class="bg-surface-container-lowest p-4 rounded-xl flex items-center justify-between gap-space-md shadow-inner">
+<div class="font-mono-data text-mono-data text-lg md:text-xl text-primary font-semibold tracking-wider truncate select-all" id="output-password">
+              xK9#vR2$mP7@qL4!tW8^
+            </div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="p-2 rounded bg-surface hover:bg-surface-container text-secondary transition-colors" id="regen-btn" title="Regenerate Seed">
+<span class="material-symbols-outlined text-body-lg">refresh</span>
+</button>
+<button class="p-2 rounded bg-primary text-on-primary hover:bg-primary-fixed-dim transition-colors" id="copy-btn" title="Copy Secret">
+<span class="material-symbols-outlined text-body-lg">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Controls Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg pt-4">
+<!-- Length Slider -->
+<div class="space-y-space-sm bg-surface-container p-4 rounded-lg">
+<div class="flex justify-between items-center">
+<label class="font-mono-key text-mono-key text-on-surface-variant uppercase" for="length-slider">Key Character Length</label>
+<span class="font-mono-data text-mono-data text-secondary font-bold" id="length-display">20</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" id="length-slider" max="64" min="12" type="range" value="20"/>
+<div class="flex justify-between text-outline font-mono-key text-mono-key">
+<span>12 MIN</span>
+<span>64 MAX</span>
+</div>
+</div>
+<!-- Entropy Diagnostics -->
+<div class="bg-surface-container p-4 rounded-lg space-y-space-xs flex flex-col justify-center">
+<div class="flex justify-between items-center">
+<span class="font-mono-key text-mono-key text-on-surface-variant uppercase">Calculated Entropy</span>
+<span class="font-mono-data text-mono-data text-secondary" id="entropy-bits">131.2 bits</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[94%] transition-all duration-300" id="entropy-bar"></div>
+</div>
+<div class="flex justify-between items-center pt-1 font-mono-key text-mono-key">
+<span class="text-outline">NIST SP 800-63B RATING</span>
+<span class="text-secondary font-bold" id="strength-label">EXCELLENT (SOVEREIGN)</span>
+</div>
+</div>
+</div>
+<!-- Toggles -->
+<div class="flex flex-wrap gap-space-md justify-center pt-2">
+<label class="flex items-center gap-2 cursor-pointer bg-surface-container px-3 py-2 rounded">
+<input checked="" class="w-4 h-4 rounded bg-surface border-none accent-primary" id="toggle-symbols" type="checkbox"/>
+<span class="font-mono-key text-mono-key text-on-surface">Include Symbols (!@#$%)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer bg-surface-container px-3 py-2 rounded">
+<input checked="" class="w-4 h-4 rounded bg-surface border-none accent-primary" id="toggle-numbers" type="checkbox"/>
+<span class="font-mono-key text-mono-key text-on-surface">Include Digits (0-9)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer bg-surface-container px-3 py-2 rounded">
+<input checked="" class="w-4 h-4 rounded bg-surface border-none accent-primary" id="toggle-avoid" type="checkbox"/>
+<span class="font-mono-key text-mono-key text-on-surface">Avoid Ambiguous Glyphs (O, 0, l, 1)</span>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. TRUST & ENTERPRISE COMPLIANCE -->
+<section class="max-w-7xl mx-auto px-margin py-20 text-center">
+<div class="mb-12">
+<span class="font-mono-key text-mono-key text-secondary uppercase tracking-widest block mb-2">// FORMAL VERIFICATION &amp; ASSURANCE</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Audited by World-Class Cryptographers</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mt-2">
+          Independent security assessments guarantee mathematical adherence to sovereign zero-knowledge principles.
+        </p>
+</div>
+<!-- Compliance Cards Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md">
+<div class="bg-surface-container p-6 rounded-xl flex flex-col items-center justify-center text-center shadow-sm hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl mb-2">verified_user</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">SOC2 Type II</h4>
+<p class="font-mono-key text-mono-key text-on-surface-variant mt-1">Continuous Compliance</p>
+</div>
+<div class="bg-surface-container p-6 rounded-xl flex flex-col items-center justify-center text-center shadow-sm hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-3xl mb-2">policy</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">ISO/IEC 27001</h4>
+<p class="font-mono-key text-mono-key text-on-surface-variant mt-1">Information Security</p>
+</div>
+<div class="bg-surface-container p-6 rounded-xl flex flex-col items-center justify-center text-center shadow-sm hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-3xl mb-2">security</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">FIPS 140-3</h4>
+<p class="font-mono-key text-mono-key text-on-surface-variant mt-1">Cryptographic Module Val.</p>
+</div>
+<div class="bg-surface-container p-6 rounded-xl flex flex-col items-center justify-center text-center shadow-sm hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-secondary text-3xl mb-2">code</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Open Source Audited</h4>
+<p class="font-mono-key text-mono-key text-on-surface-variant mt-1">Cure53 &amp; Kudelski Core</p>
+</div>
+</div>
+</section>
+<!-- 6. FINAL CALL-TO-ACTION BANNER -->
+<section class="max-w-7xl mx-auto px-margin pb-28 pt-8">
+<div class="relative rounded-2xl bg-gradient-to-b from-surface-container-high to-surface-container-low p-8 md:p-16 overflow-hidden shadow-2xl">
+<!-- Radial Violet Backlight Accent -->
+<div class="absolute -top-24 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[90px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-12 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-space-xl">
+<div class="space-y-space-md text-center md:text-left max-w-xl">
+<div class="inline-flex items-center gap-space-sm px-space-sm py-0.5 rounded bg-surface text-secondary font-mono-key text-mono-key">
+<span class="material-symbols-outlined text-sm">lock_reset</span> READY IN SECONDS
+            </div>
+<h2 class="font-display-hero text-display-hero md:text-4xl text-on-surface tracking-tight">
+              Fortify your credentials in under 60 seconds.
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+              Migrate existing 1Password, Bitwarden, or KeePass keystores without leaking client secrets. Zero lock-in, open standard formats.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md shrink-0 w-full sm:w-auto">
+<a class="w-full sm:w-auto flex items-center justify-center gap-space-sm bg-primary text-on-primary font-headline-sm text-body-md px-space-xl py-3.5 rounded-lg shadow-[0_0_24px_rgba(124,92,255,0.45)] hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-all text-center" href="#">
+<span>Create Free Personal Vault</span>
+</a>
+<a class="w-full sm:w-auto flex items-center justify-center gap-space-sm bg-surface-container hover:bg-surface-bright text-on-surface font-headline-sm text-body-md px-space-lg py-3.5 rounded-lg transition-colors text-center" href="#">
+<span>Schedule Enterprise Audit</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  (function() {
+    const lengthSlider = document.getElementById('length-slider');
+    const lengthDisplay = document.getElementById('length-display');
+    const outputPassword = document.getElementById('output-password');
+    const regenBtn = document.getElementById('regen-btn');
+    const copyBtn = document.getElementById('copy-btn');
+    const toggleSymbols = document.getElementById('toggle-symbols');
+    const toggleNumbers = document.getElementById('toggle-numbers');
+    const toggleAvoid = document.getElementById('toggle-avoid');
+    const entropyBits = document.getElementById('entropy-bits');
+    const entropyBar = document.getElementById('entropy-bar');
+    const strengthLabel = document.getElementById('strength-label');
+
+    function generateKey() {
+      const len = parseInt(lengthSlider.value, 10);
+      lengthDisplay.textContent = len;
+
+      let charset = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ"; // default avoiding ambiguous chars (l, I, O)
+      if (!toggleAvoid.checked) {
+        charset += "loIO";
+      }
+      if (toggleNumbers.checked) {
+        charset += toggleAvoid.checked ? "23456789" : "0123456789";
+      }
+      if (toggleSymbols.checked) {
+        charset += "!@#$%^&*()_+-=[]{}|;:,.<>?";
+      }
+
+      let res = "";
+      const array = new Uint32Array(len);
+      window.crypto.getRandomValues(array);
+      for (let i = 0; i < len; i++) {
+        res += charset[array[i] % charset.length];
+      }
+      outputPassword.textContent = res;
+
+      // Entropy calculation: len * log2(poolSize)
+      const poolSize = charset.length;
+      const bits = Math.round(len * Math.log2(poolSize));
+      entropyBits.textContent = bits + " bits";
+
+      const maxBits = 256;
+      const pct = Math.min(100, Math.max(10, (bits / 160) * 100));
+      entropyBar.style.width = pct + "%";
+
+      if (bits >= 120) {
+        strengthLabel.textContent = "EXCELLENT (SOVEREIGN)";
+        strengthLabel.className = "text-secondary font-bold";
+        entropyBar.className = "bg-secondary h-full transition-all duration-300";
+      } else if (bits >= 80) {
+        strengthLabel.textContent = "STRONG (STANDARD)";
+        strengthLabel.className = "text-primary font-bold";
+        entropyBar.className = "bg-primary h-full transition-all duration-300";
+      } else {
+        strengthLabel.textContent = "MODERATE (EXPAND LENGTH)";
+        strengthLabel.className = "text-tertiary font-bold";
+        entropyBar.className = "bg-tertiary h-full transition-all duration-300";
+      }
+    }
+
+    if (lengthSlider) {
+      lengthSlider.addEventListener('input', generateKey);
+      regenBtn.addEventListener('click', generateKey);
+      toggleSymbols.addEventListener('change', generateKey);
+      toggleNumbers.addEventListener('change', generateKey);
+      toggleAvoid.addEventListener('change', generateKey);
+
+      copyBtn.addEventListener('click', function() {
+        navigator.clipboard.writeText(outputPassword.textContent.trim());
+        const orig = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<span class="material-symbols-outlined text-body-lg">check</span>';
+        setTimeout(() => { copyBtn.innerHTML = orig; }, 1500);
+      });
+
+      // Initial run
+      generateKey();
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest mt-auto shadow-[0_-1px_8px_rgba(0,0,0,0.3)]"><div class="max-w-7xl mx-auto px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-4 gap-space-xl mb-space-xl"><div><div class="flex items-center gap-space-sm mb-space-md"><img alt="BlockVault Emblem" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VCenrYkHi5yETyKHoMmBCjZkMzR0v6MHDNPi8aIQ4nYICf4rZB-V0mFkwUXiHVhrVRj4KGAjkDpxpLdMNw3Xl7bBeBlL6jT2gAtl-846gQfkwMD1XNtO1kve00egxpI37kPO8R0iirfZuszffgIDvcHsW_WGDENfJw5wfpT6H508NJMbxkvdz4MYt0n3DhGEqeoGJpHPeeNp5JJsp7imt3G8JdHrxXWTrzwS8hpzTB"/><span class="font-headline-sm text-headline-sm text-on-surface uppercase">BlockVault</span></div><p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Engineered for zero-knowledge credential orchestration, sovereign enterprise key storage, and post-quantum cryptographic resilience.</p><div class="flex items-center gap-space-xs font-mono-key text-mono-key text-secondary"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>All Vault Nodes Operational</div></div><div><h4 class="font-mono-key text-mono-key uppercase text-on-surface-variant mb-space-md">Security &amp; Protocol</h4><ul class="space-y-space-xs"><li class="font-body-sm text-body-sm text-on-surface-variant">SOC2 Type II Certified</li><li class="font-body-sm text-body-sm text-on-surface-variant">ISO/IEC 27001 Verified</li><li class="font-body-sm text-body-sm text-on-surface-variant">Zero-Knowledge Architecture</li><li class="font-body-sm text-body-sm text-on-surface-variant">Independent Pen-Test Audits</li></ul></div><div><h4 class="font-mono-key text-mono-key uppercase text-on-surface-variant mb-space-md">Platform &amp; Tools</h4><ul class="space-y-space-xs"><li class="font-body-sm text-body-sm text-on-surface-variant">CLI Agent Tooling</li><li class="font-body-sm text-body-sm text-on-surface-variant">Browser Extensions</li><li class="font-body-sm text-body-sm text-on-surface-variant">Hardware Security Modules</li><li class="font-body-sm text-body-sm text-on-surface-variant">API Telemetry Feed</li></ul></div><div><h4 class="font-mono-key text-mono-key uppercase text-on-surface-variant mb-space-md">Compliance &amp; Legal</h4><ul class="space-y-space-xs"><li class="font-body-sm text-body-sm text-on-surface-variant">Cryptographic Proofs</li><li class="font-body-sm text-body-sm text-on-surface-variant">Privacy Architecture</li><li class="font-body-sm text-body-sm text-on-surface-variant">Vulnerability Disclosure</li><li class="font-body-sm text-body-sm text-on-surface-variant">Service Level Agreement</li></ul></div></div><div class="flex flex-col md:flex-row items-center justify-between gap-space-md pt-space-lg text-on-surface-variant font-mono-key text-mono-key"><span>© 2025 BlockVault Cryptographic Systems Inc. Zero Telemetry Stored.</span><span>SHA-256 Core Fingerprint: 8F2B...C90E</span></div></div></footer></body></html>

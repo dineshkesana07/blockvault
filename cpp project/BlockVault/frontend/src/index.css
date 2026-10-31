@@ -1,0 +1,96 @@
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0B1020;
+    color: #F8FAFC;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Cyber Noir Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070B16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #243047;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334466;
+}
+
+/* Cyber Glows & Telemetry Radiance */
+.cyber-glow-primary {
+  box-shadow: 0 0 16px -2px rgba(124, 92, 255, 0.4);
+}
+
+.cyber-glow-secondary {
+  box-shadow: 0 0 14px -2px rgba(34, 211, 238, 0.35);
+}
+
+.cyber-glow-danger {
+  box-shadow: 0 0 14px -2px rgba(239, 68, 68, 0.4);
+}
+
+.ambient-grid {
+  background-image: radial-gradient(rgba(34, 211, 238, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.ambient-mesh {
+  background: radial-gradient(circle at 50% 0%, rgba(124, 92, 255, 0.07) 0%, transparent 60%),
+              radial-gradient(circle at 100% 100%, rgba(34, 211, 238, 0.04) 0%, transparent 40%);
+}
+
+.font-mono-numbers {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

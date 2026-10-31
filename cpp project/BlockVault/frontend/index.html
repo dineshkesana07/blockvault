@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlockVault - Zero-Knowledge Credential Orchestration & Security SaaS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#0B1020",
+              surface: "#111A2E",
+              "surface-dim": "#0B1020",
+              "surface-bright": "#1F2B47",
+              "surface-container-lowest": "#070B16",
+              "surface-container-low": "#111A2E",
+              "surface-container": "#152037",
+              "surface-container-high": "#19253F",
+              "surface-container-highest": "#223152",
+              "surface-variant": "#223152",
+              "on-surface": "#F8FAFC",
+              "on-surface-variant": "#94A3B8",
+              "inverse-surface": "#F8FAFC",
+              "inverse-on-surface": "#0B1020",
+              outline: "#64748B",
+              "outline-variant": "#334155",
+              primary: "#7C5CFF",
+              "primary-hover": "#6945F8",
+              "on-primary": "#FFFFFF",
+              "primary-container": "#7C5CFF",
+              "on-primary-container": "#FFFFFF",
+              "primary-fixed": "#E6DEFF",
+              "primary-fixed-dim": "#CABEFF",
+              secondary: "#22D3EE",
+              "on-secondary": "#083344",
+              "secondary-container": "#0E7490",
+              "on-secondary-container": "#CFFAFE",
+              "secondary-fixed": "#A5F3FC",
+              "secondary-fixed-dim": "#22D3EE",
+              tertiary: "#F59E0B",
+              "on-tertiary": "#451A03",
+              "tertiary-container": "#B45309",
+              "on-tertiary-container": "#FEF3C7",
+              error: "#EF4444",
+              "on-error": "#FFFFFF",
+              "error-container": "#7F1D1D",
+              "on-error-container": "#FEE2E2",
+              "cyber-card": "#111A2E",
+              "cyber-card-active": "#19253F",
+              "cyber-border": "#243047",
+              "cyber-border-highlight": "#334466"
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["'JetBrains Mono'", "monospace"],
+              "headline-lg": ["Inter", "sans-serif"],
+              "headline-md": ["Inter", "sans-serif"],
+              "headline-sm": ["Inter", "sans-serif"],
+              "body-lg": ["Inter", "sans-serif"],
+              "body-md": ["Inter", "sans-serif"],
+              "body-sm": ["Inter", "sans-serif"],
+              "mono-data": ["'JetBrains Mono'", "monospace"],
+              "mono-key": ["'JetBrains Mono'", "monospace"],
+              "badge-label": ["'JetBrains Mono'", "monospace"]
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              sm: "0.125rem",
+              md: "0.375rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px"
+            },
+            spacing: {
+              gutter: "1.5rem",
+              margin: "2rem",
+              "space-xs": "0.25rem",
+              "space-sm": "0.5rem",
+              "space-md": "1rem",
+              "space-lg": "1.5rem",
+              "space-xl": "2.5rem"
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="bg-background text-on-surface antialiased min-h-screen font-sans selection:bg-primary/20 selection:text-secondary">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
