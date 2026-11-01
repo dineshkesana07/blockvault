@@ -52,6 +52,26 @@ Block AuditLedger::record_event(
     return new_block;
 }
 
+Block AuditLedger::log_vault_created(const std::string& user_id, const std::string& vault_id) {
+    return record_event(user_id, AuditEventType::VaultCreated, vault_id, "User vault storage initialized");
+}
+
+Block AuditLedger::log_credential_added(const std::string& user_id, const std::string& credential_id, const std::string& label) {
+    return record_event(user_id, AuditEventType::CredentialAdded, credential_id, "Added credential: " + label);
+}
+
+Block AuditLedger::log_credential_updated(const std::string& user_id, const std::string& credential_id, const std::string& field_name) {
+    return record_event(user_id, AuditEventType::CredentialUpdated, credential_id, "Updated field: " + field_name);
+}
+
+Block AuditLedger::log_credential_deleted(const std::string& user_id, const std::string& credential_id) {
+    return record_event(user_id, AuditEventType::CredentialDeleted, credential_id, "Deleted credential record");
+}
+
+Block AuditLedger::log_vault_locked(const std::string& user_id) {
+    return record_event(user_id, AuditEventType::VaultLocked, "", "User session ended; memory enclave wiped");
+}
+
 IntegrityVerificationResult AuditLedger::verify_integrity() {
     IntegrityVerificationResult result;
     std::vector<Block> blocks = m_db->get_all_blocks();
@@ -80,7 +100,7 @@ IntegrityVerificationResult AuditLedger::verify_integrity() {
     if (!genesis.is_valid()) {
         result.is_valid = false;
         result.tampered_index = 0;
-        result.error_message = "Genesis block hash recalculation failed.";
+        result.error_message = "Genesis block hash recalculation failed (tampered genesis payload).";
         return result;
     }
 
@@ -89,11 +109,12 @@ IntegrityVerificationResult AuditLedger::verify_integrity() {
         const Block& prev = blocks[i - 1];
         const Block& curr = blocks[i];
 
-        // Sequence check
+        // Sequence check (detect missing/deleted records)
         if (curr.index() != prev.index() + 1) {
             result.is_valid = false;
             result.tampered_index = curr.index();
-            result.error_message = "Block sequence broken at index " + std::to_string(curr.index());
+            result.error_message = "Missing record detected: gap between index " + 
+                                   std::to_string(prev.index()) + " and " + std::to_string(curr.index());
             return result;
         }
 
@@ -101,23 +122,34 @@ IntegrityVerificationResult AuditLedger::verify_integrity() {
         if (!CryptoManager::constant_time_equals(curr.previous_hash(), prev.current_hash())) {
             result.is_valid = false;
             result.tampered_index = curr.index();
-            result.error_message = "Hash chain broken between block " + std::to_string(prev.index()) + 
-                                   " and block " + std::to_string(curr.index());
+            result.error_message = "Broken hash link: record #" + std::to_string(curr.index()) + 
+                                   " previous_hash does not match hash of record #" + std::to_string(prev.index());
             return result;
         }
 
-        // Internal integrity check: recompute hash of this block's contents
+        // Timestamp regression check (time cannot flow backward)
+        auto prev_sec = std::chrono::duration_cast<std::chrono::seconds>(prev.timestamp().time_since_epoch()).count();
+        auto curr_sec = std::chrono::duration_cast<std::chrono::seconds>(curr.timestamp().time_since_epoch()).count();
+        if (curr_sec < prev_sec) {
+            result.is_valid = false;
+            result.tampered_index = curr.index();
+            result.error_message = "Timestamp regression detected at record #" + std::to_string(curr.index()) +
+                                   ": timestamp precedes prior record.";
+            return result;
+        }
+
+        // Internal integrity check: recompute SHA-256 of canonical payload
         if (!curr.is_valid()) {
             result.is_valid = false;
             result.tampered_index = curr.index();
-            result.error_message = "Data tampering detected in block " + std::to_string(curr.index()) + 
-                                   ": recorded hash does not match recomputed SHA-256.";
+            result.error_message = "Content tampering detected in record #" + std::to_string(curr.index()) + 
+                                   ": payload modified, hash verification failed.";
             return result;
         }
     }
 
     result.is_valid = true;
-    result.error_message = "All " + std::to_string(result.total_blocks) + " blocks verified successfully.";
+    result.error_message = "All " + std::to_string(result.total_blocks) + " records cryptographically verified.";
     return result;
 }
 
@@ -138,4 +170,3 @@ uint64_t AuditLedger::get_total_records() {
 }
 
 } // namespace blockvault
-

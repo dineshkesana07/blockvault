@@ -52,11 +52,13 @@ inline CredentialCategory string_to_category(const std::string& str) {
 // Audit event types for the hash-linked ledger
 enum class AuditEventType {
     Genesis,
+    VaultCreated,
     UserRegistered,
     UserLoginSuccess,
     UserLoginFailed,
     VaultUnlocked,
     VaultLocked,
+    CredentialAdded,
     CredentialCreated,
     CredentialRead,
     CredentialUpdated,
@@ -69,11 +71,13 @@ enum class AuditEventType {
 inline std::string event_type_to_string(AuditEventType type) {
     switch (type) {
         case AuditEventType::Genesis: return "GENESIS";
+        case AuditEventType::VaultCreated: return "VAULT_CREATED";
         case AuditEventType::UserRegistered: return "USER_REGISTERED";
         case AuditEventType::UserLoginSuccess: return "USER_LOGIN_SUCCESS";
         case AuditEventType::UserLoginFailed: return "USER_LOGIN_FAILED";
         case AuditEventType::VaultUnlocked: return "VAULT_UNLOCKED";
         case AuditEventType::VaultLocked: return "VAULT_LOCKED";
+        case AuditEventType::CredentialAdded: return "CREDENTIAL_ADDED";
         case AuditEventType::CredentialCreated: return "CREDENTIAL_CREATED";
         case AuditEventType::CredentialRead: return "CREDENTIAL_READ";
         case AuditEventType::CredentialUpdated: return "CREDENTIAL_UPDATED";
@@ -87,11 +91,13 @@ inline std::string event_type_to_string(AuditEventType type) {
 
 inline AuditEventType string_to_event_type(const std::string& str) {
     if (str == "GENESIS") return AuditEventType::Genesis;
+    if (str == "VAULT_CREATED") return AuditEventType::VaultCreated;
     if (str == "USER_REGISTERED") return AuditEventType::UserRegistered;
     if (str == "USER_LOGIN_SUCCESS") return AuditEventType::UserLoginSuccess;
     if (str == "USER_LOGIN_FAILED") return AuditEventType::UserLoginFailed;
     if (str == "VAULT_UNLOCKED") return AuditEventType::VaultUnlocked;
     if (str == "VAULT_LOCKED") return AuditEventType::VaultLocked;
+    if (str == "CREDENTIAL_ADDED") return AuditEventType::CredentialAdded;
     if (str == "CREDENTIAL_CREATED") return AuditEventType::CredentialCreated;
     if (str == "CREDENTIAL_READ") return AuditEventType::CredentialRead;
     if (str == "CREDENTIAL_UPDATED") return AuditEventType::CredentialUpdated;

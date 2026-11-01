@@ -111,9 +111,30 @@ if ($LASTEXITCODE -eq 0 -and (Test-Path $dbTestExe)) {
 }
 
 # ------------------------------------------------------------------------------
-# 4. Compile and run End-to-End Test Suite (test_runner.exe)
+# 4. Compile and run Audit Ledger Test Suite (test_audit_ledger.exe)
 # ------------------------------------------------------------------------------
-Write-Host "`n--- 4. Building End-to-End Test Suite (test_runner.exe) ---" -ForegroundColor Yellow
+Write-Host "`n--- 4. Building Audit Ledger Test Suite (test_audit_ledger.exe) ---" -ForegroundColor Yellow
+$auditTestExe = Join-Path $root 'tests\test_audit_ledger.exe'
+$auditTestArgs = $commonFlags + $allSources + @(
+    (Join-Path $root 'tests\test_audit_ledger.cpp'),
+    $sqliteObj,
+    '-lsodium',
+    '-o', $auditTestExe
+)
+
+& $gpp @auditTestArgs
+if ($LASTEXITCODE -eq 0 -and (Test-Path $auditTestExe)) {
+    Write-Host "Running Audit Ledger Tests..." -ForegroundColor Green
+    & $auditTestExe
+} else {
+    Write-Host "Audit Ledger test compilation failed!" -ForegroundColor Red
+    exit 1
+}
+
+# ------------------------------------------------------------------------------
+# 5. Compile and run End-to-End Test Suite (test_runner.exe)
+# ------------------------------------------------------------------------------
+Write-Host "`n--- 5. Building End-to-End Test Suite (test_runner.exe) ---" -ForegroundColor Yellow
 $e2eTestExe = Join-Path $root 'tests\test_runner.exe'
 $e2eTestArgs = $commonFlags + $allSources + @(
     (Join-Path $root 'tests\main_test.cpp'),
