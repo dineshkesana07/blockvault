@@ -5,7 +5,7 @@ $root = $PSScriptRoot
 
 $env:Path = $binDir + ';' + $env:Path
 
-Write-Host "Compiling BlockVault C++20 Cryptography, Core & Database Test Suites..." -ForegroundColor Cyan
+Write-Host "Compiling BlockVault C++20 Test Suites..." -ForegroundColor Cyan
 
 $inc1 = "-I" + (Join-Path $root 'include')
 $inc2 = "-I" + (Join-Path $root 'third_party\sqlite')
@@ -70,9 +70,29 @@ if ($LASTEXITCODE -eq 0 -and (Test-Path $cryptoTestExe)) {
 }
 
 # ------------------------------------------------------------------------------
-# 2. Compile and run Database Test Suite (test_database.exe)
+# 2. Compile and run Password Generator Test Suite (test_password_generator.exe)
 # ------------------------------------------------------------------------------
-Write-Host "`n--- 2. Building Database Test Suite (test_database.exe) ---" -ForegroundColor Yellow
+Write-Host "`n--- 2. Building Password Generator Test Suite (test_password_generator.exe) ---" -ForegroundColor Yellow
+$pwdTestExe = Join-Path $root 'tests\test_password_generator.exe'
+$pwdTestArgs = $commonFlags + $cryptoSources + @(
+    (Join-Path $root 'tests\test_password_generator.cpp'),
+    '-lsodium',
+    '-o', $pwdTestExe
+)
+
+& $gpp @pwdTestArgs
+if ($LASTEXITCODE -eq 0 -and (Test-Path $pwdTestExe)) {
+    Write-Host "Running Password Generator Tests..." -ForegroundColor Green
+    & $pwdTestExe
+} else {
+    Write-Host "Password Generator test compilation failed!" -ForegroundColor Red
+    exit 1
+}
+
+# ------------------------------------------------------------------------------
+# 3. Compile and run Database Test Suite (test_database.exe)
+# ------------------------------------------------------------------------------
+Write-Host "`n--- 3. Building Database Test Suite (test_database.exe) ---" -ForegroundColor Yellow
 $dbTestExe = Join-Path $root 'tests\test_database.exe'
 $dbTestArgs = $commonFlags + $allSources + @(
     (Join-Path $root 'tests\test_database.cpp'),
@@ -91,9 +111,9 @@ if ($LASTEXITCODE -eq 0 -and (Test-Path $dbTestExe)) {
 }
 
 # ------------------------------------------------------------------------------
-# 3. Compile and run End-to-End Test Suite (test_runner.exe)
+# 4. Compile and run End-to-End Test Suite (test_runner.exe)
 # ------------------------------------------------------------------------------
-Write-Host "`n--- 3. Building End-to-End Test Suite (test_runner.exe) ---" -ForegroundColor Yellow
+Write-Host "`n--- 4. Building End-to-End Test Suite (test_runner.exe) ---" -ForegroundColor Yellow
 $e2eTestExe = Join-Path $root 'tests\test_runner.exe'
 $e2eTestArgs = $commonFlags + $allSources + @(
     (Join-Path $root 'tests\main_test.cpp'),

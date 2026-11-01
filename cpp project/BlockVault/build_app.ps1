@@ -37,7 +37,7 @@ $sources = @(
 $sqliteObj = Join-Path $root 'third_party\sqlite\sqlite3.o'
 $outExe = Join-Path $outDir 'blockvault.exe'
 
-$args = @(
+$compileArgs = @(
     '-std=c++20',
     '-O2',
     '-Wall',
@@ -51,7 +51,7 @@ $args = @(
     $libSodium
 ) + $sources + @($sqliteObj, '-lsodium', '-o', $outExe)
 
-& $gpp @args
+& $gpp @compileArgs
 if ($LASTEXITCODE -eq 0 -and (Test-Path $outExe)) {
     Write-Host "Build complete: $outExe" -ForegroundColor Green
     & $outExe
